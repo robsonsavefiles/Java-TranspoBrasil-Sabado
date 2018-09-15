@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class table="itens" name="br.org.soujava.teleentrega.model.Item">
+    <id column="codigo" name="codigo">
+      <generator class="native"/>
+    </id>
+    <property name="descricao" type="string" column="descricao"/>
+    <property name="quantidade" type="integer" column="quantidade"/>
+    <property name="valor" type="double" column="valor_total"/>     
+
+    <many-to-one not-null="false" column="codigo_pedido" name="pedido"/>
+    
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,146 @@
+-- phpMyAdmin SQL Dump
+-- version 2.10.3
+-- http://www.phpmyadmin.net
+-- 
+-- Servidor: localhost
+-- Tiempo de generación: 25-11-2015 a las 11:00:56
+-- Versión del servidor: 5.0.51
+-- Versión de PHP: 5.2.6
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+-- 
+-- Base de datos: `bookmedik`
+-- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `category`
+-- 
+
+CREATE TABLE `category` (
+  `id` int(11) NOT NULL auto_increment,
+  `name` varchar(200) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+-- 
+-- Volcar la base de datos para la tabla `category`
+-- 
+
+INSERT INTO `category` VALUES (1, 'Neumologia');
+INSERT INTO `category` VALUES (2, 'Pediatria');
+INSERT INTO `category` VALUES (3, 'Ginecologia');
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `medic`
+-- 
+
+CREATE TABLE `medic` (
+  `id` int(11) NOT NULL auto_increment,
+  `name` varchar(50) NOT NULL,
+  `lastname` varchar(50) default NULL,
+  `email` varchar(255) NOT NULL,
+  `address` varchar(255) default NULL,
+  `phone` varchar(255) default NULL,
+  `image` varchar(255) default NULL,
+  `is_active` tinyint(1) NOT NULL default '1',
+  `created_at` datetime NOT NULL,
+  `category_id` int(11) default NULL,
+  PRIMARY KEY  (`id`),
+  KEY `category_id` (`category_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+-- 
+-- Volcar la base de datos para la tabla `medic`
+-- 
+
+INSERT INTO `medic` VALUES (1, 'Luis', 'Sanchez', 'sanches@live.com', 'la mar 239 la vicki', '987456321', NULL, 1, '2015-11-25 10:27:07', NULL);
+INSERT INTO `medic` VALUES (2, 'Nick', 'Gonzales', 'rio@hotmail.com', 'Av Cangallo 992 Lima', '987456321', NULL, 1, '2015-11-25 10:32:29', NULL);
+INSERT INTO `medic` VALUES (3, 'Martin', 'Villata', 'lastorresgemelas@live.com', 'Av Surco 9092 Surco', '963698532', NULL, 1, '2015-11-25 10:33:09', NULL);
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `pacient`
+-- 
+
+CREATE TABLE `pacient` (
+  `id` int(11) NOT NULL auto_increment,
+  `name` varchar(50) NOT NULL,
+  `lastname` varchar(50) default NULL,
+  `email` varchar(255) NOT NULL,
+  `address` varchar(255) default NULL,
+  `phone` varchar(255) default NULL,
+  `image` varchar(255) default NULL,
+  `is_active` tinyint(1) NOT NULL default '1',
+  `created_at` datetime NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+-- 
+-- Volcar la base de datos para la tabla `pacient`
+-- 
+
+INSERT INTO `pacient` VALUES (1, 'Luis', 'Ventura', 'lokito@hotmail.com', 'Av Angamos 783', '4563256', NULL, 1, '2015-11-25 10:30:33');
+INSERT INTO `pacient` VALUES (2, 'Andrea', 'Montenegro', 'negirta@hotmail.com', 'Las Palmas 2829 Surco', '4563256', NULL, 1, '2015-11-25 10:31:20');
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `reservation`
+-- 
+
+CREATE TABLE `reservation` (
+  `id` int(11) NOT NULL auto_increment,
+  `title` varchar(100) NOT NULL,
+  `note` text NOT NULL,
+  `message` text NOT NULL,
+  `date_at` varchar(50) NOT NULL,
+  `time_at` varchar(50) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `pacient_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `medic_id` int(11) NOT NULL,
+  `is_web` tinyint(1) NOT NULL default '0',
+  PRIMARY KEY  (`id`),
+  KEY `user_id` (`user_id`),
+  KEY `pacient_id` (`pacient_id`),
+  KEY `medic_id` (`medic_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+-- 
+-- Volcar la base de datos para la tabla `reservation`
+-- 
+
+INSERT INTO `reservation` VALUES (1, 'Dolor de Pecho', 'Mucho Dolor en el Pecho', '', '2015-11-27', '03:00', '2015-11-25 10:33:56', 2, 4, 1, 0);
+INSERT INTO `reservation` VALUES (2, 'Golpe', 'Mucho Dolor', '', '2015-11-29', '03:30', '2015-11-25 10:34:37', 1, 4, 2, 0);
+INSERT INTO `reservation` VALUES (3, 'Ardor', 'Me arde', '', '2015-11-28', '03:59', '2015-11-25 10:52:05', 2, 4, 3, 0);
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `user`
+-- 
+
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL auto_increment,
+  `username` varchar(50) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `lastname` varchar(50) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(60) NOT NULL,
+  `is_active` tinyint(1) NOT NULL default '1',
+  `is_admin` tinyint(1) NOT NULL default '0',
+  `created_at` datetime default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+
+-- 
+-- Volcar la base de datos para la tabla `user`
+-- 
+
+INSERT INTO `user` VALUES (4, 'michell', 'Alexander Michell', 'CastaÃ±eda', '', 'fe703d258c7ef5f50b71e06565a65aa07194907f', 1, 1, '2015-11-25 10:23:23');

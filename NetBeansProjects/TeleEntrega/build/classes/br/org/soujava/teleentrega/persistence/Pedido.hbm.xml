@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class table="pedidos" name="br.org.soujava.teleentrega.model.Pedido">
+    <id column="codigo" name="codigo">
+      <generator class="native"/>
+    </id>
+    <property name="dataPedido" type="date" column="data_pedido"/>
+    <property name="observacoes" type="string" column="observacoes"/>
+    <bag  cascade="all" name="itens">
+      <key column="codigo_pedido"/>
+      <!--<index column="index"/>-->
+      <one-to-many class="br.org.soujava.teleentrega.model.Item"/>
+    </bag>
+    <many-to-one not-null="false" column="codigo_cliente" name="cliente"/>
+  </class>
+</hibernate-mapping>

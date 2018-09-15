@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            var meuobjeto ={};
+            var meuobjeto2={
+                name:'Robson',getIdade:function (){
+                    return 34;
+                }
+            };
+            console.log(meuobjeto);
+            
+            console.log(meuobjeto2);
+            console.log(meuobjeto2.name);
+            console.log(meuobjeto2.getIdade());
+            
+            console.log(meuobjeto.name);
+            meuobjeto.name ='Ricardo ferreira de melo';
+            console.log(meuobjeto.name);
+            meuobjeto.getNacionalidade= function (){
+                return 'brasileiro';
+            };
+            console.log(meuobjeto.getNacionalidade());
+            
+            
+            /* =============================================*/
+            /* Funçoes Construtoras*/
+            /* =============================================*/
+            
+            function Pessoa(nome,telefone){
+                this.nome = nome;
+                this.telefone = telefone;
+            }
+            
+            var felipe = new Pessoa('Robson','4792633291');
+            console.log(felipe.nome);
+            console.log(felipe.telefone);
+            var joao = new Pessoa('João da Silva Pereira Santos Soares','33839482');
+            console.log(joao.nome);
+            console.log(joao.telefone);
+            
+            var mateus = new Pessoa('Matheus');
+            console.log(mateus.nome);
+            console.log(mateus.telefone);
+            
+            function Contato(nome,email){
+                var self = this;
+                self.nome = nome;
+                self.email = email;
+                return{
+                    getNome:function(){
+                        return self.nome;
+                    },
+                    setNome: function(nome){
+                        self.nome = nome;
+                    },
+                    getEmail: function(){
+                       return self.email;
+                    },
+                    setEmail: function(email){
+                        self.email = email;
+                      
+                    }
+                };
+            }
+            
+            var contato = new Contato('Robson',"robson.ferreiramelo@gmail.com");
+            console.log('propriedade nome->'+contato.nome);
+            console.log('propriedade email->'+contato.email);
+            console.log('propriedade getNome->'+contato.getNome());
+            console.log('propriedade getEmail->'+contato.getEmail());
+            contato.setNome('robson ferreira de melo');
+            contato.setEmail('robson.ferreiramelo@gmail.com');
+            console.log('metodo getEmail->'+contato.getEmail());
+            
+            console.log('======================================================');
+            console.log('Utilizando for in');
+            
+            for(var atr in contato){
+                console.log(atr +'  ->'+contato[atr]());
+            }
+            for(var atr in contato){
+                console.log(atr +'  ->'+contato[atr]());
+            }
+            
+            
+            
+        </script>
+       
+        
+        
+    </body>
+</html>

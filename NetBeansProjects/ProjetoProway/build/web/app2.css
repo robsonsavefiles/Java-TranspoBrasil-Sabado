@@ -1,0 +1,62 @@
+.linha{
+    width: 100%;
+  
+}
+.linha :before, linha:after{
+    display: table;
+    content: " ";
+}
+linha:after{
+    clear:both;
+}
+.coluna_4{
+    width: 33.10%;
+    float:left;
+}
+
+body > header > nav > ul{
+    padding: 0px;
+    margin:0px;
+    list-style:none;
+}
+   
+body > header > nav > ul li{
+    display: inline;
+    margin-right: 20px;
+}
+
+body > header > nav > ul li a{
+    padding: 2px 10px;
+    display: inline-block;
+    /*Visual do link*/
+    color:blue;
+    text-decoration:none;
+}
+
+body> border{
+    margin-bottom: 20px;
+    clear:both;
+    display:table;
+}
+
+body>header > nav{
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.painel-header > img.center{
+    float:none; display:block; margin-left:auto;margin-right: auto;
+}
+.center{
+    float:none;display: table;margin-left: auto;margin-right: auto;
+}
+
+body{
+   
+   
+}
+
+section > header{
+    margin:10px 0 20px 20px;
+    font-size: 20px;
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body> 
+        <img src="picture/form.png" width="100" height="100">
+        <h1>Formulario Pessoal </h1>
+
+        <!-- Formulario-->
+        <form action="para onde vai os dados" method ="POST">
+            <fieldset>
+                <legend>Dados Pessoais</legend>
+                <label> Nome</label><br/>
+                <input type ="text" placeholder="Digite seu Nome" name="nome" required title="Campo Obrigatorio"><br/>
+                <label> Email</label><br/>
+                <input type ="email" placeholder="Digite seu Email" name="email" required><br/>
+                <label> Endereço</label><br/>
+                <input type ="text" placeholder="Digite o seu Endereço" name="endereço"><br/>
+                <label> CEP</label><br/>
+                <input type ="text" placeholder="Digite o seu CEP" name="Cep"><br/>
+                <label> Telefone</label><br/>
+                <input type ="text" placeholder="Digite o seu telefone" name="telefone"><br/>
+
+                <label> Genero</label><br/>
+                <input type ="radio" name="genero" value ="masculino">masculino<br/>
+                <input type ="radio" name="genero" value ="Feminino">Feminino<br/>
+
+                <label>Estado Civil</label><br/>
+                <input type ="radio" name="estadocivil" value ="Solteiro">Solteiro(a)<br/>
+                <input type ="radio" name="estadocivil" value ="Casado">Casado(a)<br/>
+                <input type ="radio" name="estadocivil" value ="Divorciado">Divorciado(a)<br/>
+
+            </fieldset>
+            
+            <fieldset>
+                <label>Escolaridade</label><br/>
+                <input type ="radio" name="escolariade" value ="SuperiorCompleto">Superior Completo<br/>
+                <input type ="radio" name="escolaridade" value ="SuperiorIncompleto">Superior Incompleto<br/>
+                <input type ="radio" name="escolaridade" value ="SuperiorIncompleto">Ensino Medio<br/>
+                <input type ="radio" name="escolaridade" value ="SuperiorIncompleto">Ensino Medio Incompleto<br/>
+            </fieldset>
+            
+            <fieldset>
+                <legend> Conhecimentos</legend>
+                <input type="checkbox" name="Java" value="sim" checked ="checked">Java <br/>
+                <input type="checkbox" name="C++" value="sim">C++<br/>
+                <input type="checkbox" name="JavaScript" value="sim">JavaScript<br/>
+                <input type="checkbox" name="Abap" value="sim">Rubby<br/>
+                <input type="checkbox" name="Delphi" value="sim">Delphi<br/>
+                <input type="checkbox" name="C#" value="sim">C#<br/>
+                
+            </fieldset>
+
+            <fieldset>
+                <legend>Local de Atuação</legend>
+                <label> Cidade</label><br/>
+                <input type = "text" name="cidade"><br/>
+                <label> País </label><br/>
+                <select name ="Estado">
+                    <optgroup label = "Europa">
+                        <option value ="FR" selected="selected">França</option>
+                        <option value="AL">Alemanha</option>
+                        <option value="PT">Portugal</option>
+                        <option value="IR">Irlanda</option>
+                        <option value="IN">Inglaterra</option>
+                    </optgroup>
+                    <optgroup label = "América">
+                        <option value ="BR" selected="selected">Brasil</option>
+                        <option value="ME">Mexico</option>
+                        <option value="CH">Chile</option>
+                        <option value="AR">Argentina</option>
+                        <option value="UR">Uruguai</option>
+                        <option value="CN">Canada</option>
+                        <option value="EUA">Estados Unidos</option>
+                    </optgroup>
+                    <optgroup label = "ASIA">
+                        <option value ="CH" selected="selected">China</option>
+                    </optgroup>
+                    <optgroup label = "Africa">
+                        <option value ="AF" selected="selected">Africa do sul</option>
+                        <option value ="SE" selected="selected">Senegal</option>
+                        <option value ="CA" selected="selected">Camarões</option>
+                    </optgroup>
+                </select>
+
+                <label> Descreva Porque voce merece Entrar na Philips</label><br/>
+                <textarea name = qualidades></textarea><br/>
+                <button type ="submit">Enviar</button>
+                <button type ="reset">Limpar</button>
+
+            </fieldset>
+
+        </form>
+    </body>
+</html>

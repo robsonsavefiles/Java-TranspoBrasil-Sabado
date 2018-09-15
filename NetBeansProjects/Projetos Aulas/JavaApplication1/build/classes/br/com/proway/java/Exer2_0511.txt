@@ -1,0 +1,23 @@
+
+class Exer2_0511{
+
+	public static void main(String[] args){
+
+		String nome = "Robson";
+		String sobrenome = "Ferreira;
+		String lastname = "Melo";
+
+		int idade = 28;
+		int QI= 121;
+		int peso =85;
+
+		double altura = 1.73;
+		double tamanhoDoPe = 42.5;
+		double tamanhoDaMao= 12.5;
+
+		
+
+
+}
+
+}

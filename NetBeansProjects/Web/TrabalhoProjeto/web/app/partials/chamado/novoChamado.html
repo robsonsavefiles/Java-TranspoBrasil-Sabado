@@ -1,0 +1,65 @@
+<div class="row">
+    <div class="col-xs-12">
+        <div class="page-header">
+            <h2>{{titulo}}</h2>
+        </div>
+    </div>
+
+
+
+    <!-- Formulario de Cadastro-->
+
+    <div class="col-xs-12" style="margin-top: 15px">
+        <form ng-submit="salvar(chamado)">
+            <div class="row">
+                <div class="col-xs-12 col-md-8">
+                    <div class="form-group">
+                        <label>Projeto</label>
+                    <select class="form-control"  
+                    ng-model="projeto"
+                    ng-options="projeto.nome for projeto in projetos track by projeto.id"
+                    ng-change="onProjetoSelecionado()">
+
+                    </select>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-8">
+                    <div class="form-group">
+                        <label>Status</label>
+                        <select class="form-control" ng-model="chamado.status" ng-options="status for status in status">
+
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label>Titulo</label>
+                        <input ng-model="chamado.titulo"
+                               placeholder="Titulo do chamado"
+                               class="form-control">
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label>Descriçao</label>
+                        <textarea ng-model="chamado.descricao"
+                                  placeholder="Descrição do chamado"
+                                  class="form-control"></textarea>
+                    </div>
+                </div>
+
+               
+            </div>
+        </form>
+         <div class="col-xs-12" style="margin-top: 10px">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-3 pull-right">
+                            <button type="submit" class="btn btn-primary btn-block">Salvar</button>
+                        </div>
+                    </div>
+
+                </div>
+    </div>
+</div>

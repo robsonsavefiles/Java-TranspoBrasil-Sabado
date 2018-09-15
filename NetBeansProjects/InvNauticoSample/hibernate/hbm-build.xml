@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="hbm-build" default="hbm" basedir="..">
+
+  <property name="xdoclet2.home" location="j:/xdoclet-2.0.3" />
+  <property name="hibernate.home" location="j:/hibernate-3.0.5"/>
+
+  <property name="src.dir" location="src" />
+  <property name="out.dir" location="hibernate/output" />
+  <property name="classes.dir" location="build/classes" />
+
+  <path id="the.class.path">
+    <fileset dir="${hibernate.home}/lib" includes="**/*.jar" />
+    <fileset dir="${hibernate.home}" includes="hibernate3.jar" />
+    <dirset dir="${classes.dir}" />
+    <dirset dir="${out.dir}/hbm" />
+  </path>	
+  
+  <target name="prepare.hbm" description="description">
+    <delete dir="${out.dir}" />
+    <mkdir dir="${out.dir}/hbm" />
+  </target>
+
+  <target name="hbm" depends="prepare.hbm" description="gera arquivos de mapeamento">
+    <taskdef name="hibernatedoclet" classname="org.xdoclet.ant.XDocletTask">
+      <classpath>
+        <dirset dir="hibernate"/>
+        <fileset dir="${hibernate.home}/lib" includes="log4j*.jar" />
+      	<fileset dir="${xdoclet2.home}/lib" includes="*.jar" />
+      	<fileset dir="${xdoclet2.home}/plugins" includes="xdoclet-plugin-hibernate-1.0.2.jar"/>
+      </classpath>
+    </taskdef>  
+    <hibernatedoclet>
+      <fileset dir="${src.dir}" includes="**/*.java" />
+      <component classname="org.xdoclet.plugin.hibernate.HibernateMappingPlugin" version="3.0" destdir="${out.dir}"/>
+    </hibernatedoclet>
+  </target>
+
+  <target name="schemaexport">
+    <taskdef name="schemaexport" classname="org.hibernate.tool.hbm2ddl.SchemaExportTask" classpathref="the.class.path"/>
+    <schemaexport config="${src.dir}/br/com/globalcode/aw5/app/hibernate-config.xml" 
+                  quiet="no" text="yes" drop="no" delimiter=";" 
+                  output="${out.dir}/model.sql" />
+  </target>
+
+
+</project>
+
+

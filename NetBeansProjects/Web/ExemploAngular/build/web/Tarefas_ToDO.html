@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html ng-app="projeto-ola">
+    <head>
+        <title>Ola Angular</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="vendor/angularjs/angular.js"></script>
+        <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap-theme.css">
+        <style>
+            
+
+            td a{
+                cursor: pointer;
+                color: #00897b
+            }
+            ul{
+                list-style: none;
+            }
+            .concluida{
+                color :white;
+                background-color: green;
+                text-decoration: line-through;
+            }
+        </style>
+    </head>
+    <body ng-controller="principalController">
+        <h1>Minhas Tarefas</h1>
+        <input type="hidden" ng-model="atual.id">
+
+        <label>Nome</label><br/>
+        <input ng-model="atual.nome"><br><br/>
+        <label>Descriçao</label><br/>
+        <textarea ng-model="atual.descricao"></textarea><br/>
+        
+        
+        <button type="button" class="btn-success" ng-click="salvar(atual)">Adicionar</button>
+        
+                        
+        <ul>
+            <li ng-repeat="tarefa in tarefas" ng-class="{concluida:tarefa.concluida}">
+                <input type="checkbox" ng-model="tarefa.concluida">
+                {{tarefa.nome}}
+                <button ng-click="tarefa.mostrarDescricao = true">Mostrar Descrição</button>
+                <button ng-click="tarefa.mostrarDescricao = false">Ocultar Descrição</button>
+                <div ng-show="tarefa.mostrarDescricao">
+                    {{tarefa.descricao}}
+                </div>
+
+            </li>
+        </ul>
+        
+        <script src="vendor/bootstrap/js/bootstrap.js" type="text/java"></script>
+        <script>
+                    //cria o modulo projeto-ola
+                    angular.module('projeto-ola', []);
+
+                    angular.module('projeto-ola')
+                            .controller('principalController', ['$scope', function ($scope) {
+                                    $scope.tarefas = [];
+                                    $scope.atual = {concluido: false};
+
+                                    $scope.salvar = function (tarefa) {
+                                        if (tarefa.nome) {
+                                            if (tarefa.id) {
+                                                for (var i = 0; i < $scope.tarefas.length; i++) {
+                                                    if (tarefa.id === $scope.tarefas[i].id) {
+                                                        $scope.tarefas[i] = angular.copy(tarefa);
+                                                    }
+                                                }
+                                            } else {
+                                                tarefa.id = $scope.tarefas.length + 1;
+                                                $scope.tarefas.push(angular.copy(tarefa));
+                                            }
+                                            $scope.atual = {
+                                            };
+                                        }
+                                        ;
+                                    };
+                                    $scope.remover = function (index) {
+                                        $scope.tarefas.splice(index, 1);
+
+                                    };
+
+                                    $scope.editar = function (index) {
+                                        $scope.atual = angular.copy($scope.tarefas[index]);
+                                    };
+                                }]);
+        </script>
+        
+        <script src="vendor/jquery/jquery-2.1.4.min.js" type="text/javascript"></script>
+        <script src="vendor/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+
+    </body>
+</html>

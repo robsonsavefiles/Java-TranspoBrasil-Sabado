@@ -1,0 +1,18 @@
+- Features
+  - Relatórios:
+    - Para venda;
+    - Inventário completo;
+    - Gerador de site;
+  - Tarefas executadas e pendentes p/ comp. e equipo
+  - Fotos e imagens de componentes e equipos
+  - Inteligencia no campo localização;
+  - Composite de componentes e drag-and-drop;
+  - Menu direito no contexto do node na árvore
+ 
+- Hibernate duvidas:
+  - Composite associa.
+  - Como saber que deu erro na session?
+  - Problema de novo componente Vs. index column
+  - Delete cascade constraints
+
+  

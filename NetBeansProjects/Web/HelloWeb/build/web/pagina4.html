@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!-- -->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <link href="App.css" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            p{
+                margin-top: 10px;
+                color: green;
+            }
+            h2{
+                color:red;
+            }
+            #subtitulo{
+                color:orange;
+                background-color: #ccc;
+            }
+
+            .par{
+                background-color: #fff;
+            }
+            .impar{
+                background-color: #ccc;
+            }
+            *{
+                border : 1px solid blue;
+            }
+            div#teste p b{
+                color: orange;
+            }
+            
+            h1,h2,h3{
+                font-family: monospace;
+            }
+            input [type = "text"]:focus{
+                border: 5px solid greenyellow;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h1 style ="color: red; background-color : blue">Titulo</h1>
+        <p>Paragrafo 01</p>
+        <h2 style ="color:blue"> Teste123</h2>   
+        <h2 id="subtitulo"> Subtitulo com id subtitulo</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <td>Nome</td>
+                    <td>Email</td>
+                    <td>Telefone</td>
+
+
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr class ="impar">
+                    <td>Contato01</td>
+                    <td>contato01@hotmail.com</td>
+                    <td>4792633291</td>
+                </tr>
+                <tr class ="par">
+
+                    <td>Contato02</td>
+                    <td>Contato2@hotmail.com</td>
+                    <td>889641512</td>
+                </tr>
+                <tr class ="impar">
+                    <td>Contato03</td>
+                    <td>robinhotri@hotmail.com</td>
+                    <td>1399885545</td>
+
+                </tr>
+                <tr class ="par">
+                    <td>Contato04</td>
+                    <td>robinhotri@gmail.com</td>
+                    <td>1387447444</td>
+
+                </tr>
+
+            </tbody>
+        </table>
+        <div  id="teste">
+            <b></b>
+            <p> Paragrafo<b>01</b></p>
+            <p> Paragrafo<b>02</b></p>
+            <p> Paragrafo<b>03</b></p>
+        </div>
+        <div>
+            <p> Paragrafo<b>01</b></p>
+            <p> Paragrafo<b>02</b></p>
+            <p> Paragrafo<b>03</b></p>
+        </div>
+        <input  type ="text"><br/>
+        <hr/>
+        <input  type ="email">
+    </body>
+</html>

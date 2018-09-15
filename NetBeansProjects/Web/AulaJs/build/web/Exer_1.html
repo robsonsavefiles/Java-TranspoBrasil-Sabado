@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!-- Aula JavaScript -->
+<html lang="pt-br">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            label,input{
+                display:block;
+            }
+        </style>
+    </head>
+    <body>
+
+        <script>
+            num = prompt("Escolha a posição");
+            inicio = 0;
+            dois = 1;
+            tres = 0;
+            while (tres < num) {
+                var t = inicio;
+                inicio = dois;
+                dois += t;
+                tres++;
+            }
+            document.write("<br />" + inicio);
+            
+//            function fib(f) { 
+//               var i = 0, j = 1, n = 0;  
+//               while (n < f) {
+//                   document.write("<br />"+i);
+//                   var t = i;	
+//                   i = j;	
+//                   j += t;
+//                   n++;  
+//               }
+//           }
+
+        </script>
+    </body>
+</html>
+

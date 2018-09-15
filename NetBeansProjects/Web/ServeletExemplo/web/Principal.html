@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="curso">
+    <head>
+        <title>Atividade</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- Boostrap CSS -->
+        <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    
+        <style>
+            input.ng-invalid{
+                color:red;
+                border-color:red;
+
+            }
+            .ng-pristine{
+                border-color: orange;
+            }
+            .ng-dirty{
+                color:green;
+                border-color: greenyellow;
+            }
+            input.ng-valid{
+                color:blue;
+            }
+             .temErro{
+                color:red;
+            }
+            .temErro input{
+                color:black;
+                background-color: red;
+            }
+
+        </style>
+    </head>
+    <body ng-controller="mainController">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="Principal.html">Projeto Proway Philips</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a ui-sref="cursos">cursos</a></li>
+                        <li><a ui-sref="professores">professores</a></li>
+                        <li><a ui-sref="alunos">alunos</a></li>
+                        <li><a ui-sref="turmas">Turmas</a></li>
+                    </ul>
+                   <ul class="nav navbar-nav navbar-right">
+                        <li><a >Bem Vindo, <b>{{user.nome}}</b></a></li>
+                        <li><a ng-click="logout()">Sair</a></li>      
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        
+        <div class="container">
+            <div class="alert alert-danger text-center" ng-show="alertaLogin">{{alert}}</div>
+            <div ui-view>
+
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="row" ng-controller="caixaMensagemController">
+                <div class="col-xs-12" ng-show="mensagem">
+                    <div class="panel panel-danger">
+                        <div class="panel-body bg-danger text-center">
+                            <span class="glyphicon glyphicon-remove pull-right" ng-click="fechar()"></span>
+                            {{mensagem}}
+                        </div>
+                    </div>
+                </div>
+               
+        </div>
+        
+        <!-- JQuery -->
+        <script src="vendor/jquery/js/jquery.js" ></script>
+        
+        <!-- Angular -->
+        <script src="vendor/angular/angular.js" ></script>
+        <script src="vendor/angular/angular-cookies.js" ></script>
+        <script src="vendor/angular-ui-router/release/angular-ui-router.js" ></script>
+        <script src="vendor/angular/angular-locale_pt-br.js" ></script>
+        
+        <!-- Bootstrap -->
+        <script src="vendor/bootstrap/js/bootstrap.js" ></script>
+        
+        <!-- App -->
+        <script src="app/js/app.js" ></script>
+        <script src="app/js/rota.js" ></script>
+        
+        <!-- App Services -->
+        <script src="app/js/services/autenticacaoService.js"></script>
+        <script src="app/js/services/servico-curso.js"> </script>
+        <script src="app/js/services/servico-professor.js" ></script>
+        <script src="app/js/services/servico-aluno.js" ></script>
+        <script src="app/js/services/servico-turma.js" ></script>
+        <script src="app/js/services/servico-certificacao.js"></script>
+        <!-- App Filters-->
+        
+        <!-- App Controllers -->
+
+        <script src="app/js/controllers/loginController.js"></script>
+        <script src="app/js/controllers/mainControllerLogin.js"></script>
+        <script src="app/js/controllers/mainController.js"></script>
+        <script src="app/js/controllers/caixaMensagemController.js"></script>
+        
+        <!-- App Controllers Cursos -->
+        <script src="app/js/controllers/cursosController.js"></script>
+        <script src="app/js/controllers/cursosListaController.js"></script>
+        <script src="app/js/controllers/cursos-formulario-controller.js"></script>
+        <script src="app/js/controllers/pesquisa-professor-controller.js"></script>
+        <script src="app/js/controllers/pesquisa-curso-controller.js"></script>
+        <!-- App Controllers  Professores-->
+        <script src="app/js/controllers/professoresController.js"></script>
+        <script src="app/js/controllers/professoresListaController.js"></script>
+        <script src="app/js/controllers/professores-formulario-controller.js"></script>
+        <script src="app/js/controllers/professoresDetalheController.js"></script>
+        
+        <!-- App Controllers Alunos -->
+        <script src="app/js/controllers/alunosController.js"></script>
+        <script src="app/js/controllers/alunosListaController.js"></script>
+        <script src="app/js/controllers/alunos-formulario-controller.js"></script>
+        
+        <!-- App Controllers Turmas-->
+        <script src="app/js/controllers/turmasController.js" type="text/javascript"></script>
+        <script src="app/js/controllers/turmasListaController.js" type="text/javascript"></script>
+        <script src="app/js/controllers/turmas-formulario-controller.js" type="text/javascript"></script>
+        <script src="app/js/controllers/pesquisa-certificacao-controller.js"></script>
+    </body>
+</html>

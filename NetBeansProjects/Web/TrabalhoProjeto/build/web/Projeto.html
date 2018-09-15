@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="projeto">
+    <head>
+        <title>The Call</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Boostrap CSS -->
+        <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet" />
+
+        <style>
+            input.ng-invalid{
+                color:red;
+                border-color:red;
+
+            }
+            .ng-pristine{
+                border-color: orange;
+            }
+            .ng-dirty{
+                color:green;
+                border-color: greenyellow;
+            }
+            input.ng-valid{
+                color:blue;
+            }
+            .temErro{
+                color:red;
+            }
+            .temErro input{
+                color:black;
+                background-color: red;
+            }
+
+        </style>
+    </head>
+    <body ng-controller="mainController">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="Projeto.html">The Call</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a ui-sref="projetos.lista">Projetos</a></li>
+                        <li><a ui-sref="chamados.lista">Chamados</a></li>
+                        <li><a ui-sref="providencias.lista">Ocorrências</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a >Bem Vindo, <b>{{user.nome}}</b></a></li>
+                        <li><a ng-click="logout()">Sair</a></li>      
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+
+        <div class="container">
+            <div class="alert alert-danger text-center" ng-show="alertaLogin">{{alert}}</div>
+            <div ui-view>
+
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row" ng-controller="caixaMensagemController">
+                <div class="col-xs-12" ng-show="mensagem">
+                    <div class="panel panel-danger">
+                        <div class="panel-body bg-danger text-center">
+                            <span class="glyphicon glyphicon-remove pull-right" ng-click="fechar()"></span>
+                            {{mensagem}}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- JQuery -->
+            <script src="vendor/jquery/js/jquery.js" ></script>
+
+            <!-- Angular-->
+            <script src="vendor/angular/angular.js" ></script>
+            <script src="vendor/angular/angular-cookies.js" ></script>
+            <script src="vendor/angular-ui-router/release/angular-ui-router.js" ></script>
+            <script src="vendor/angular/angular-locale_pt-br.js" ></script>
+
+            <!-- Bootstrap -->
+            <script src="vendor/bootstrap/js/bootstrap.js" ></script>
+
+            <!-- App -->
+            <script src="app/app.js" ></script>
+            <script src="app/rota.js" ></script>
+
+            <!-- App Services -->
+
+            <script src="app/services/autenticacaoService.js"></script>
+            <script src="app/services/servico-chamado.js"></script>
+            <script src="app/services/servico-projeto.js"></script>
+            <script src="app/services/servico-providencia.js"></script>
+            <!-- App Filters-->
+
+            <!-- App Controllers -->
+            <script src="app/js/controllers/login/mainControllerLogin.js"></script>
+            <script src="app/js/controllers/mainController.js"></script>
+            <script src="app/js/controllers/caixaMensagemController.js" ></script>
+            <script src="app/js/controllers/loginController.js" ></script>
+
+            <!-- App Controllers Projeto-->
+            <script src="app/js/controllers/projeto/projetosController.js"></script>
+            <script src="app/js/controllers/projeto/projetos-lista-controller.js"></script>
+            <script src="app/js/controllers/projeto/projetosNovosController.js"></script>
+            <script src="app/js/controllers/projeto/pesquisa-projeto-controller.js"></script>
+
+            <!-- App Controllers  Chamados-->
+            <script src="app/js/controllers/chamado/chamadoFormularioController.js"></script>
+            <script src="app/js/controllers/chamado/chamadosListaController.js"></script>
+            <script src="app/js/controllers/chamado/chamadosController.js"></script>
+            <script src="app/js/controllers/chamado/pesquisa-chamado-controller.js"></script>
+
+            <!-- App Controllers Providencias-->
+            <script src="app/js/controllers/providencia/pesquisa-providencia-controller.js"></script>
+            <script src="app/js/controllers/providencia/providenciaNovaController.js"></script>
+            <script src="app/js/controllers/providencia/providenciasController.js"></script>
+            <script src="app/js/controllers/providencia/providenciasDetalheController.js"></script>
+            <script src="app/js/controllers/providencia/providenciasListaController.js"></script>
+    </body>
+</html>

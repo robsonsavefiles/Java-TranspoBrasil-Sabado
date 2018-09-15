@@ -1,0 +1,63 @@
+<div class="row">
+    <div class="col-xs-12">
+        <div class="page-header">
+            <h2>{{titulo}}</h2>
+        </div>
+    </div>
+
+
+
+    <!-- Formulario de Cadastro-->
+
+    <div class="col-xs-12" style="margin-top: 15px">
+        <form ng-submit="salvar(providencia)">
+            <div class="row">
+                <div class="col-xs-12 col-md-8">
+                    <div class="form-group">
+                        <label>Providencia</label>
+                        <select class="form-control" required ng-model="providencia.projeto" ng-options="projeto for projeto in providencias">
+
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-8">
+                    <div class="form-group">
+                        <label>Chamado</label>
+                        <select class="form-control" required ng-model="chamado.projeto" ng-options="projeto for projeto in projetos">
+
+                        </select>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-8">
+                    <div class="form-group">
+                        <label>Estagio</label>
+                        <select class="form-control" required ng-model="estagio.providencia" ng-options="providencia for providencia in providencias">
+
+                        </select>
+                    </div>
+                </div>
+
+
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label>Autor</label>
+                        <textarea ng-model="providencia.autor"
+                                  placeholder="Nome do autor da providencia"
+                                  class="form-control"></textarea>
+                    </div>
+                </div>
+
+                <div class="col-xs-12" style="margin-top: 10px">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-3 pull-right">
+                            <button class="btn btn-primary btn-block" type="submit">Salvar</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>

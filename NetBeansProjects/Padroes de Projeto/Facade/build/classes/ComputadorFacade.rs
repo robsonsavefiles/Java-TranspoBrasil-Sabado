@@ -1,0 +1,4 @@
+HardDrive
+Cpu
+ComputadorFacade
+Memoria

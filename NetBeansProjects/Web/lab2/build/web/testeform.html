@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="teste">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <style>
+            .temErro{
+                color:red;
+            }
+            .temErro input{
+                color:black;
+                background-color: red;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h1>Validaçoes de Campos</h1>
+        <form novalidate="novalidate" name="f" ng-controller="formController">
+            <div ng-class="{temErro:(f.entrada.$dirty && f.entrada.$invalid)}">
+                <label>Nome</label><br/>
+                <input name="entrada" ng-model="dados" ng-required="true" ng-minlength="6">
+                <p ng-show="f.entrada.$dirty && f.entrada.$error.required">Campo nao preenchido</p>
+                <p ng-show="f.entrada.$error.minlength">Campo requerer o minino 6 caracteres</p>
+            </div>
+            <div ng-class="{temErro:(f.email.$dirty && f.entrada.$invalid)}">
+                <label>Email</label><br/>
+                <input name="email" type="email" ng-model="email">
+                <p ng-show="f.email.$error.required">Email incorreto</p>
+
+            </div>
+        </form>
+
+        <div ng-controller="principalController">
+            <h2>Treinando Scopos</h2>
+            <hr/>
+            <div scope-false></div>
+            <scope-false></scope-false>
+            <scope-true></scope-true>
+            <scope-papael nome="nome"></scope-papael>
+            <hr/>
+            <p style="color:red">{{mensagem}}</p>
+        </div>
+        <hr/>
+        <h2>Criando componente com diretivas</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input  class="form-control" ng-model="nome">
+                    </div>
+                </div>
+                <phil-input input-name="campo1" label="Campo1" col-class="col-xs-6" model="name" placeholder="Informe O Campo1" >
+                    
+                </phil-input>
+            </div>
+        </div>
+        <!-- directive:ola -->
+        <script src="vendor/angular/angular.js" type="text/javascript"></script>
+
+
+        <script>
+                angular.module('teste', [])
+                        .controller('formController', ['$scope', function ($scope) {
+
+                            }])
+                        .controller('principalController', ['$scope', function ($scope) {
+                                $scope.mensagem = 'Mensagem definida no Scopo';
+                                $scope.nome = 'ROBSON FERREIRA';
+                                $scope.getNome = function () {
+                                    return $scope.nome;
+                                };
+
+                            }])
+
+                        .directive('scopeFalse', function () {
+                            return{
+                                restrict: 'AE',
+                                scope: false,
+                                template: '<div><h1>{{mensagem}}</h1></div>'
+
+
+                            };
+                        })
+                        .directive('scopeTrue', function () {
+                            return{
+                                restrict: 'AE',
+                                scope: true,
+                                template: '<div><h1>Bem vindo{{nome}}</h1><p>{{mensagem}}</p></div>',
+                                controller: function ($scope) {
+                                    $scope.mensagem = 'Mensagem definida na diretiva';
+                                }
+                            };
+
+                        })
+                        .directive('scopePapael', function () {
+                            return{
+                                restrict: 'AE',
+                                scope: {
+                                    //passa o valor literal
+                                    //nome:@nome
+                                    // bind de uma funçao externa com  o scope
+                                    //nome:'@nome'
+                                    //bind de uma propriedade externa com scope interno
+                                    nome: '=nome'
+                                },
+                                template: '<div><h1>Bem vindo &gt;{{nome}}&lt</h1><p>{{mensagem}}</p></div>',
+                                controller: function ($scope) {
+                                    $scope.mensagem = 'Mensagem definida na diretiva';
+                                }
+                            };
+
+                        })
+                                .directive('philInput',function (){
+                                    
+                                    return{
+                                        restrict:'E',
+                                        replace:true,
+                                        scope:{
+                                            colClass:'@',
+                                            label:'@',
+                                            inputName:'@',
+                                            placeholder:'@',
+                                            model:'='
+                                        },
+                                        templateUrl:'app/partials/paginas/directives/inputForm.html',
+                                        
+                                    }
+                        })
+                                .directive('philInput',function (){
+                                    
+                                    return{
+                                        restrict:'E',
+                                        replace:true,
+                                        scope:{
+                                            colClass:'@',
+                                            label:'@',
+                                            inputName:'@',
+                                            placeholder:'@',
+                                            model:'='
+                                        },
+                                        templateUrl:'app/partials/paginas/directives/inputForm.html',
+                                        
+                                    }
+                        })
+//                    .directive('ola', function () {
+//                        return{
+//                            //A - Atribute Element Class M
+//
+//                            restrict: 'AECM',
+//                            templateUrl: '../directives/ola.html',
+//                            replace: true,
+//                            priority: 1
+//                        };
+//                    })
+
+                        .directive('diretiva2', function () {
+                            return{
+                                //A - Atribute Element Class M
+
+                                restrict: 'A',
+                                replace: false,
+                                priority: 2,
+                                terminal: true,
+                                link: function (scope, elemento, attr) {
+                                    angular.element(elemento).append('<div><h1>Diretiva2</h1></div>');
+                                }
+                            };
+                        })
+
+                        .directive('diretiva3', function () {
+                            return{
+                                //A - Atribute Element Class M
+
+                                restrict: 'A',
+                                replace: false,
+                                priority: 3,
+                                link: function (scope, elemento, attr) {
+                                    angular.element(elemento).append('<div><h1>Diretiva3</h1></div>');
+                                }
+                            };
+                        });
+
+        </script>
+
+    </body>
+</html>

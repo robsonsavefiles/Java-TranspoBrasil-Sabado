@@ -1,0 +1,18 @@
+Data de criação:Fri Nov 20 13:57:51 BRST 2015
+Data de alteraçao:Fri Nov 20 13:57:51 BRST 2015
+Placa:BZX8330
+Cor:PRETA
+Marca:HONDA
+Moddelo:BIZ
+Ano de Fabricação:2012
+Ano do Modelo2011
+=================================================
+Data de criação:Fri Nov 20 13:58:18 BRST 2015
+Data de alteraçao:Fri Nov 20 13:58:18 BRST 2015
+Placa:BZO8970
+Cor:ROXA
+Marca:HONDA
+Moddelo:BIZ+
+Ano de Fabricação:2014
+Ano do Modelo2013
+=================================================

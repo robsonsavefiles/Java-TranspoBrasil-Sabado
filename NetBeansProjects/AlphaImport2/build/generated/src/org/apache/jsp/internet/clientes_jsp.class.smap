@@ -1,0 +1,12 @@
+SMAP
+clientes_jsp.java
+JSP
+*S JSP
+*F
++ 0 clientes.jsp
+internet/clientes.jsp
+*L
+1,42:46
+43,33:89
+75,15:122
+*E

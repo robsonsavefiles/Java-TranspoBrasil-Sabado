@@ -1,0 +1,25 @@
+<div class="panel-body">
+    <input class="form-control" ng-model="search" placeholder="Pesquisar por...">
+
+    <table class="table table-bordered table-hover" style="margin-top: 15px">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Login</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="usuario in usuarios| filter: search">
+                <td>{{usuario.nome}}</td>
+                <td>{{usuario.login}}</td>
+                <td class="text-center">
+                    <span class="glyphicon glyphicon-info-sign pointer" ng-click="irParaDetalhes(usuario)" style="margin-right: 5px"></span>
+                    <span class="glyphicon glyphicon-edit pointer" ng-click="irParaEditar(usuario)" style="margin-right: 5px"></span>
+                    <span class="glyphicon glyphicon-trash pointer" ng-click="remover(usuario)"></span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

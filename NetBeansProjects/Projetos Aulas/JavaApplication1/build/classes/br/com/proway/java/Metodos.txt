@@ -1,0 +1,55 @@
+2)metodos dos objetos 
+
+
+Cachorro 
+
+late
+cheira 
+faz xixi
+faz coco
+
+
+
+Gato:
+
+mia
+dormir
+fugir
+caçar ratos
+
+televisão
+
+liga
+desliga 
+aumenta
+dimini
+troca de canal
+
+Pessoa:
+
+andar
+comer
+dormir
+correr
+
+Radio
+
+liga 
+desligar
+troca de estação
+
+Conta bancaria
+
+saldo
+tipo de conta
+saque
+deposito
+transferencia
+
+
+
+
+
+
+		  
+		

@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+class Exer03_leitor{
+
+
+public static void main(String[] args){
+
+	Scanner teclado = new Scanner(System.in);
+	System.out.print("Informe a primeira nota:");	
+	String n1= teclado.nextLine();
+        int nota1 = Integer.parseInt(n1);
+
+	System.out.print("Informe a segunda nota:");	
+	String n2= teclado.nextLine();
+	int nota2 = Integer.parseInt(n2);
+
+	System.out.print("Informe a terceira nota:");	
+	String n3= teclado.nextLine();
+	int nota3 = Integer.parseInt(n2);
+
+
+
+
+	int media = (nota1+nota2+nota3)/3;
+
+	System.out.println("A sua Media foi:" + media);
+
+
+
+}
+}

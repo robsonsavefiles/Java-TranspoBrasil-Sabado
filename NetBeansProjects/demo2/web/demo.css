@@ -1,0 +1,15 @@
+.popupItem {
+  background: #FFFAFA;
+  color: #000000;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+.popupItem:hover {
+  background: #7A8AFF;
+  color: #FFFAFA;
+}
+
+.popupRow {
+  background: #FFFAFA;
+}

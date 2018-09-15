@@ -1,0 +1,48 @@
+<div class="row">
+    <div class="col-xs-12">
+        <div class="page-header">
+            <h2>Lista de Projetos</h2>
+        </div>
+    </div>
+
+    <!--Barra de Pesquisa-->
+    <div class="col-xs-12">
+        <div class="row">
+            <div class="col-xs-12 col-dm-12">
+                <input class="form-control" ng-model="search"
+                       placeholder="Pesquisar por">
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <!--Tabela com os dados-->
+    <div class="col-xs-12 col-md-12" style="margin-top: 15px">
+
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Opçoes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="projeto in projetos| filter:search">
+                    <td>{{projeto.nome}}</td>
+
+                    <td><span class="glyphicon glyphicon-edit"
+                              ng-click="editar(projeto)"
+                              style="margin-right: 5px"></span>
+                        <span class="glyphicon glyphicon-remove"
+                              ng-click="remover(projeto)"></span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+</div>

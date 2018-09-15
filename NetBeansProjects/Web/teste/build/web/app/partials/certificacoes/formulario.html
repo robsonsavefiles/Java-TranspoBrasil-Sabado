@@ -1,0 +1,48 @@
+<div class="row">
+    <div class="col-xs-12">
+         <div class="page-header">
+            <h2>{{titulo}}</h2>
+        </div>
+    </div>
+    
+    
+    
+    <!-- Formulario de Cadastro-->
+    
+    <div class="col-xs-12" style="margin-top: 15px">
+        <form ng-submit="salvar(certificacao)">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label>Nome</label>
+                        <input ng-model="certificacao.nome"
+                               placeholder="Nome da Certificação"
+                               class="form-control">
+                    </div>
+                </div>
+                
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label>Órgão Expeditor</label>
+                        <input ng-model="certificacao.orgaoExpeditor"
+                               placeholder="Órgão Expeditor"
+                               class="form-control">
+                    </div>
+                </div>
+
+                
+                <div class="col-xs-12" style="margin-top: 10px">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-3 pull-right">
+                            <button type="submit" class="btn btn-primary btn-block">Salvar</button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+        </form>
+    </div>
+    
+</div>

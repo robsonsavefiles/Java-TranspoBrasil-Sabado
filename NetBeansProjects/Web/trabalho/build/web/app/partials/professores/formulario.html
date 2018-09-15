@@ -1,0 +1,156 @@
+<div class="row">
+    <div class="col-xs-12">
+        <div class="page-header">
+            <h2>{{titulo}}</h2>
+        </div>
+        <img src="app/img/teacher.png" class="pull-right"/>
+    </div>
+    <!-- Formulario de cadastro-->
+
+    <div class="col-xs-12" style="margin-top: 15px">
+        <form ng-submit="salvar(professor)">
+            <div class="row">
+                <legend>Dados Pessoais</legend>
+                <div class="col-xs-12 form-group col-md-6">
+                    <div class="form-group">
+                        <label>Nome</label>
+                        <input ng-model="professor.nome"
+                               placeholder="nome do Professor"
+                               class="form-control">
+                    </div>
+                </div>
+
+                <div class="col-xs-12 form-group col-md-6">
+                    <div class="form-group">
+                        <label>Sobrenome</label>
+                        <input ng-model="professor.sobrenome"
+                                  placeholder="sobrenome do professor"
+                                  class="form-control">
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label>CPF</label>
+                        <input ng-model="professor.cpf"
+                                  placeholder="cpf do professor"
+                                  class="form-control">
+                    </div>
+                </div>
+
+                <div class="col-xs-12 form-group col-md-6">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input ng-model="professor.email"
+                                  placeholder="Email do professor"
+                                  class="form-control">
+                    </div>
+                </div>
+                <div class="col-xs-12 form-group col-md-4">
+                    <div class="form-group">
+                        <label>Telefone </label>
+                        <input ng-model="professor.telefone"
+                                  placeholder="Telefone do professor"
+                                  class="form-control">
+                    </div>
+                </div>
+                <div class="col-xs-12 form-group col-md-4">
+                    <div class="form-group">
+                        <label>Escolaridade </label>
+                        <input ng-model="professor.Escolaridade"
+                                  placeholder="Escolaridade do professor"
+                                  class="form-control">
+                    </div>
+                </div>
+                 
+                 <legend>Certificaçoes</legend>
+                 <img src="app/img/certi.png" class="pull-right" height="100" width="100"/>
+                    <div class="col-xs-12 form-group col-md-12">
+                        <div class="form-group">
+                            <label>Nome</label>
+                         <input ng-model="certificacao.nome"
+                                      placeholder="Informe o nome da Certificaçao"
+                                      class="form-control">
+                        </div>
+                    </div>
+                 <div class="col-xs-12 form-group col-md-6">
+                        <div class="form-group">
+                            <label>Orgao Expeditor</label>
+                         <input ng-model="certificacao.orgao_expeditor"
+                                      placeholder="Informe o Orgao Expeditor"
+                                      class="form-control">
+                        </div>
+                    </div>
+
+                    <legend>Endereço</legend>
+                    <div class="col-xs-12 form-group col-md-4">
+                        <div class="form-group">
+                            <label>Rua</label>
+                         <input ng-model="professor.Endereco.rua"
+                                      placeholder="Nome da Rua"
+                                      class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 form-group col-md-4">
+                        <div class="form-group">
+                            <label>Numero</label>
+                            <input ng-model="professor.Endereco.numero"
+                                      placeholder="Numero da Residência"
+                                      class="form-control">
+                        </div>
+                    </div>  
+                    <div class="col-xs-12 form-group col-md-4">
+                        <div class="form-group">
+                            <label>Complemento</label>
+                            <input ng-model="professor.Endereco.complemento"
+                                      placeholder="Informe o Complemento"
+                                      class="form-control">
+                        </div>
+                    </div>   
+                    <div class="col-xs-12 form-group col-md-4">
+                        <div class="form-group">
+                            <label>Cidade</label>
+                            <input ng-model="professor.Endereco.cidade"
+                                      placeholder="Informe a Cidade"
+                                      class="form-control">
+                        </div>
+                    </div>   
+                    <div class="col-xs-12 form-group col-md-4">
+                        <div class="form-group">
+                            <label>Estado</label>
+                            <input ng-model="professor.Endereco.estado"
+                                      placeholder="Informe o Estado"
+                                      class="form-control">
+                        </div>
+                    </div>  
+                    <div class="col-xs-12 form-group col-md-4">
+                        <div class="form-group">
+                            <label>Pais</label>
+                           <input ng-model="professor.Endereco.pais"
+                                      placeholder="Informe o Pais"
+                                      class="form-control">
+                        </div>
+                    </div>   
+
+                </fieldset>
+
+                <div class="col-xs-12" style="margin-top: 10px">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-3 pull-right">
+                            <button type="submit" class="btn btn-primary btn-block">Salvar</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </form>
+    </div>
+
+</div>
+
+
+<!-- Modal -->
+<div ng-controller="pesquisaCertificacaoController">
+    <div ng-include="'app/partials/certificacoes/pesquisa-certificacao.html'"></div>
+</div>

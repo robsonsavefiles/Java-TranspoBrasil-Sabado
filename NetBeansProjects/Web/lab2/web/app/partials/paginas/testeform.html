@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="teste">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .temErro{
+                color:red;
+            }
+            .temErro input{
+                color:black;
+                background-color: red;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h1>Validaçoes de Campos</h1>
+        <form novalidate="novalidate" name="f" ng-controller="formController">
+            <div ng-class="{temErro:(f.entrada.$dirty && f.entrada.$invalid)}">
+                <label>Nome</label><br/>
+                <input name="entrada" ng-model="dados" ng-required="true" ng-minlength="6">
+                <p ng-show="f.entrada.$dirty && f.entrada.$error.required">Campo nao preenchido</p>
+                <p ng-show="f.entrada.$error.minlength">Campo requerer o minino 6 caracteres</p>
+            </div>
+            <div ng-class="{temErro:(f.email.$dirty && f.entrada.$invalid)}">
+                <label>Email</label><br/>
+                <input name="email" type="email" ng-model="email">
+                <p ng-show="f.email.$error.required">Email incorreto</p>
+
+            </div>
+        </form>
+        <div ola></div>
+        <ola></ola>
+        <div class="ola directiva1"></div>
+        <!-- directive:ola -->
+        <script src="../../../vendor/angular/angular.js"></script>
+        <script>
+                    angular.module('teste', []).controller('formController', ['$scope', function ($scope) {
+
+                        }]);
+                            
+
+        </script>
+
+    </body>
+</html>

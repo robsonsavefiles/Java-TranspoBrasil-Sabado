@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="page-header col-xs-12 col-sm-6 col-sm-offset-3">
+        <h1>Login</h1>
+    </div>
+
+    <div class="form-group col-xs-12 col-sm-6 col-sm-offset-3">
+        <label>Usuário</label>
+        <input class="form-control" type="text" placeholder="Digite seu usuário (tiago)" ng-model="credencial.login">
+    </div>
+
+    <div class="form-group col-xs-12 col-sm-6 col-sm-offset-3">
+        <label>Senha</label>
+        <input class="form-control" type="password" placeholder="Digite sua senha (t)" ng-model="credencial.senha">
+    </div>
+
+    <div class="container col-xs-12 col-sm-6 col-sm-offset-3">
+        <button class="btn btn-success btn-block" ng-click="login(credencial)">Entrar</button>
+    </div>
+</div>

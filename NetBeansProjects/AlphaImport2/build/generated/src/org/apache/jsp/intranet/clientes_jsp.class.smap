@@ -1,0 +1,12 @@
+SMAP
+clientes_jsp.java
+JSP
+*S JSP
+*F
++ 0 clientes.jsp
+intranet/clientes.jsp
+*L
+1,68:46
+69,31:115
+99,27:146
+*E

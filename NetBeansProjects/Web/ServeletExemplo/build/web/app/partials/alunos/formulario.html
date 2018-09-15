@@ -1,0 +1,141 @@
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="page-header">
+            <h2>{{titulo}}</h2>
+        </div>
+        <p> <img src="app/img/aluno.png"  height="100" width="100" class="pull-right"/></p>
+    </div>
+    <!-- Formulario de cadastro-->
+
+    <div class="col-xs-12" style="margin-top: 15px">
+        <form ng-submit="salvar(aluno)">
+            <div class="row">
+                <legend>Dados Pessoais</legend>
+                <div class="col-xs-12 form-group col-md-12">
+                    <div class="form-group">
+                        <label>Nome</label>
+                        <input ng-model="aluno.nome"
+                               placeholder="nome do Aluno"
+                               class="form-control">
+                    </div>
+                </div>
+
+                <div class="col-xs-12 form-group col-md-12">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input ng-model="aluno.email"
+                               placeholder="Email do aluno"
+                               class="form-control">
+                    </div>
+                </div>
+                <div class="col-xs-12 form-group col-md-6">
+                    <div class="form-group">
+                        <label>CPF</label>
+                        <input ng-model="aluno.cpf"
+                               placeholder="cpf do aluno"
+                               class="form-control">
+                    </div>
+                </div>
+                
+                 <div class="col-xs-12 form-group col-md-6">
+                    <div class="form-group">
+                        <label>RG</label>
+                        <input ng-model="aluno.rg"
+                               placeholder="rg do aluno"
+                               class="form-control">
+                    </div>
+                </div>
+
+                <div class="col-xs-12 form-group col-md-4">
+                    <div class="form-group">
+                        <label>Telefone</label>
+                        <input ng-model="aluno.telefone"
+                               placeholder="Telefone do Aluno"
+                               class="form-control">
+                    </div>
+                </div>
+                <div class="col-xs-12 form-group col-md-4">
+                    <div class="form-group">
+                        <label>Sexo</label>
+                        <input ng-model="aluno.sexo"
+                               placeholder="Sexo do Aluno"
+                               class="form-control">
+                    </div>
+                </div>
+                <div class="col-xs-12 form-group col-md-4">
+                    <div class="form-group">
+                        <label>Escolaridade </label>
+                        <input ng-model="aluno.escolaridade"
+                               placeholder="Escolaridade do Aluno"
+                               class="form-control">
+                    </div>
+                </div>
+
+                <legend>Endereço</legend>
+                <div class="col-xs-12 form-group col-md-4">
+                    <div class="form-group">
+                        <label>Rua</label>
+                        <input ng-model="aluno.endereco.rua"
+                               placeholder="Nome da Rua"
+                               class="form-control">
+                    </div>
+                </div>
+                <div class="col-xs-12 form-group col-md-4">
+                    <div class="form-group">
+                        <label>Numero</label>
+                        <input ng-model="aluno.endereco.numero"
+                               placeholder="Numero da Residência"
+                               class="form-control">
+                    </div>
+                </div>  
+                <div class="col-xs-12 form-group col-md-4">
+                    <div class="form-group">
+                        <label>Complemento</label>
+                        <input ng-model="aluno.endereco.complemento"
+                               placeholder="Informe o Complemento"
+                               class="form-control">
+                    </div>
+                </div>   
+                <div class="col-xs-12 form-group col-md-4">
+                    <div class="form-group">
+                        <label>Cidade</label>
+                        <input ng-model="aluno.endereco.cidade"
+                               placeholder="Informe a Cidade"
+                               class="form-control">
+                    </div>
+                </div>   
+                <div class="col-xs-12 form-group col-md-4">
+                    <div class="form-group">
+                        <label>Estado</label>
+                        <input ng-model="aluno.endereco.estado"
+                               placeholder="Informe o Estado"
+                               class="form-control">
+                    </div>
+                </div>  
+                <div class="col-xs-12 form-group col-md-4">
+                    <div class="form-group">
+                        <label>Pais</label>
+                        <input ng-model="aluno.endereco.pais"
+                               placeholder="Informe o Pais"
+                               class="form-control">
+                    </div>
+                </div>   
+
+                </fieldset>
+
+                <div class="col-xs-12" style="margin-top: 10px">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-3 pull-right">
+                            <button type="submit" class="btn btn-primary btn-block">Salvar</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </form>
+    </div>
+
+</div>

@@ -1,0 +1,78 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	background-color:#999;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:11px;
+	color:#666;
+}
+#contenedor{
+	background-color:#FFF;
+	width:960px;
+	height:50px;
+}
+#cabecera{
+	background-color:#369;
+	width:960px;
+	margin:auto;
+}
+#logo{
+	background-color:#369;
+	width:400px;
+	height:50px;
+	float:left;
+	background-image:url(../recursos/logo.png);
+}
+#cliente{
+	background-color:#369;
+	width:560px;
+	height:50px;
+	float:right;
+}
+#banner{
+	width:960px;
+	height:250px;
+	background-image:url(../recursos/banner02.jpg);
+}
+#menu{
+	width:960px;
+	height:30px;
+	background-color:#369;
+}
+#contenido{
+	background-color:#FFF;
+	width:960px;
+}
+#separador{
+        background-color: #FFF;
+	width:960px;
+	height:30px;
+}
+#pie{
+        background-color:#369 ;
+	width:960px;
+	height:50px;
+}
+
+
+/*Atributos de Menu*/
+#menu table{
+	background-color:#369;
+	color:#FFF;
+	height:30px;
+	width:960px;
+}
+#menu table td{
+	width:120px;
+	text-align:center;
+}
+#menu table td:hover{
+	background-color:#9CF;
+	color:#039;
+	cursor:pointer;
+}
+#menu table td a{
+	color:#FFF;
+	text-decoration:none;
+}

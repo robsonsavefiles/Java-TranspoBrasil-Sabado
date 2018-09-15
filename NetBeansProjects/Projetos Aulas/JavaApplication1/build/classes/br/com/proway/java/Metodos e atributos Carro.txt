@@ -1,0 +1,19 @@
+3)Determine quais atributos e metodos podem ser atribuidos a um objeto Carro.
+
+
+Carro	
+	
+atributos		metodos
+		
+porta			abre/fecha
+farol			liga/desliga
+pisca alerta		liga direito/liga esquerdo
+retrovisor		ajusta direito/ajusta esquerdo.
+porta mala		tamanho em litros.
+velocimentro		marca velocididade.
+parabrisa		liga/desliga.
+motor(potência)		liga/desliga.
+acelerador		acelerar			
+freio			freiar	
+alarme			ativa/desativa		
+		

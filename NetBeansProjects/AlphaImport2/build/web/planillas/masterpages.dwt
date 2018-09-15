@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>AlphaImport</title>
+<link rel="stylesheet"  href="estilo1.css"/>
+</head>
+<body>
+<center>
+<div id="contenedor">
+
+    <div id="cabecera">
+    	<div id="logo"></div>    	
+        <div id="cliente"></div>
+    </div>
+    <div id="banner"></div>
+    <div id="menu">
+   	  <table>
+        	<tr>
+            	<td>Inicio
+                <td>Empresa
+                <td>Ubicacion
+                <td>Productos
+                <td>Catalogo
+                <td>Clientes
+                <td>Contactenos
+                <td>Intranet
+            </tr>
+        </table>
+    </div>
+    <div id="contenido"><!-- TemplateBeginEditable name="EditRegion1" -->
+      <table width="960" border="0">
+        <tr>
+          <td></td>
+        </tr>
+      </table>
+    <!-- TemplateEndEditable --></div>
+    <div id="separador"></div>
+    <div id="pie"></div>
+</div>
+</center>
+</body>
+</html>

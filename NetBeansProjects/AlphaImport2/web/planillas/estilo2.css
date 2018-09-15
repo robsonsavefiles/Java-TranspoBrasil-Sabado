@@ -1,0 +1,80 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	background-color:#FFF;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:11px;
+	color:#666;
+}
+#contenedor{
+	background-color:#CCC;
+	width:960px;
+	height:50px;
+}
+#cabecera{
+	background-color:#CCC;
+	width:960px;
+	margin:auto;
+}
+#logo{
+	background-color:#CCC;
+	width:400px;
+	height:50px;
+	float:left;
+	background-image:url(../recursos/logo2.png);
+}
+#cliente{
+	background-color:#CCC;
+	width:560px;
+	height:50px;
+	float:right;
+	text-align:right;
+	color:#000;
+}
+#banner{
+	width:960px;
+	height:250px;
+	background-image:url(../recursos/banner02.jpg);
+}
+#menu{
+	width:960px;
+	height:30px;
+	background-color:#CCC;
+}
+#contenido{
+	background-color:#FFF;
+	width:960px;
+}
+#separador{
+        background-color: #FFF;
+	width:960px;
+	height:30px;
+}
+#pie{
+        background-color:#CCC;
+	width:960px;
+	height:50px;
+}
+
+
+/*Atributos de Menu*/
+#menu table{
+	background-color:#CCC;
+	color:#FFF;
+	height:30px;
+	width:960px;
+}
+#menu table td{
+	width:120px;
+	text-align:center;
+}
+#menu table td:hover{
+	background-color:#FFF;
+	color:#FFF;
+	cursor:pointer;
+}
+#menu table td a{
+	color:#000;
+	text-decoration:none;
+}

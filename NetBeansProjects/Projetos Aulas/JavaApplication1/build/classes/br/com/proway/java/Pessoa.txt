@@ -1,0 +1,16 @@
+
+class Pessoa{
+
+	void enviarMensagem(Mensageiro boy){
+	boy.receberMensagem("Java na Cabeca");
+
+}	
+	void apresentarMensagem(Mensageiro boy){
+	System.out.println(boy.entregarMensagem());
+
+	}
+
+
+}
+
+

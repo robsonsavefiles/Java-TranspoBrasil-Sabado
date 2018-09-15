@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+footer{
+    margin-top: 15px;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+.subtitle{
+    font-size: x-large;
+    text-align: center;
+}
+
+.panel-title{
+    text-align: center;
+}
+
+.ng-valid{
+/*    border-color: greenyellow;*/
+}
+
+.ng-invalid{
+    border-color:red;
+}
+
+.ng-pristine{
+    color: #444;
+    border-color: #ccc;
+}
+
+.form-message-error{
+    color: red;
+    float: right;
+}

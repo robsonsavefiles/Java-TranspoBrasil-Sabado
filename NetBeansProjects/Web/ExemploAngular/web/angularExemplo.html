@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html ng-app="projeto-ola">
+    <head>
+        <title>Ola Angular</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="vendor/angularjs/angular.js"></script>
+        <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap-theme.css">
+        
+        <style>
+            input,button,label{
+                display: block;
+            }
+            td a{
+                cursor: pointer;
+                color: blue;
+                   
+            }
+        </style>
+    </head>
+    <body ng-controller="principalController">
+        <h1>Meus contatos</h1>
+        <input type="hidden" ng-model="atual.id">
+
+        <label>Nome</label>
+        <input ng-model="atual.nome">
+        <label>Email</label>
+        <input ng-model="atual.email">
+        <label>Telefone</label>
+        <input ng-model="atual.telefone">
+        <button type="button" ng-click="salvar(atual)">Salvar</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Telefone</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="contato in contatos">
+                    
+                    <td><a ng-click="editar($index)">{{contato.nome}}</a></td>
+                    <td>{{contato.email}}</td>
+                    <td>{{contato.telefone}}</td>
+                    <td><a ng-click="remover($index)"href="#">Remover</a></td>
+                    
+                </tr>
+            </tbody>
+        </table>
+        
+        <script src="vendor/bootstrap/js/bootstrap.js" type="text/java"></script>
+        
+        <script>
+                    //cria o modulo projeto-ola
+                    angular.module('projeto-ola', []);
+
+                    angular.module('projeto-ola')
+                            .controller('principalController', ['$scope', function ($scope) {
+                                    $scope.contatos = [];
+                                    $scope.atual = {};
+
+                                    $scope.salvar = function (contato) {
+                                        if(contato.nome){
+                                        contato.id = contato.id || $scope.contatos.length + 1;
+                                        var index = -1;
+                                        angular.forEach($scope.contatos,function (current,pos){
+                                            if(angular.equals(current.id,contato.id)){
+                                                index =pos;
+                                            }
+                                        });
+                                        if(index >-1){
+                                            $scope.contatos[index]= angular.copy(contato);
+                                        }else{
+                                            $scope.contatos.push(angular.copy(contato));
+                                        }
+                                    }
+                                        $scope.atual = {};
+                                    };
+                                    
+                         $scope.remover = function (index){
+                             $scope.contatos.splice(index,1);
+                             
+                             
+                             
+                         };    
+                         $scope.editar=function (index){
+                             $scope.atual = angular.copy($scope.contatos[index]);
+                         };
+                        
+                                }]);
+
+        </script>
+        <script src="vendor/jquery/jquery-2.1.4.min.js" type="text/javascript"></script>
+        <script src="vendor/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+    </body>
+</html>

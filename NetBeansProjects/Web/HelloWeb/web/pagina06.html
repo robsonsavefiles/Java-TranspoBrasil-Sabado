@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            div em {
+                color:red;
+            }
+            div.testefilho >em + p{
+                color:orange;
+            }
+            div.testefilho >p + p{
+                color:fuchsia;
+            }
+            div.pseudo p:first-child{
+                font-size: 24px;
+                color:red;
+            }
+            div.pseudo > a:visited{
+                color:fuchsia;
+                
+            }
+            div.pseudo > a:link{
+                color:red;
+               
+            }
+            div.pseudo > a:hover{
+                color:black;
+                font-size: 30px;
+            }
+            div.pseudo:hover{
+                color:orange;
+            }
+            div.pseudo input :focus{
+                background-color: bisque;
+            }
+            div.elemento{
+                width: 100px;
+            }
+            div.elemento:first-line{
+                color:blue;
+            }
+                div.elemento:first-letter{
+                    color: red;
+                    font-size: 30px;
+                }
+                div.elemento2:before{
+                    margin: 20px 0 20px 0;
+                    font-size: 20px;
+                    content: "Antes";
+                    color:green;
+                }
+                div.elemento2:after{
+                    margin: 20px 0 20px 0;
+                    font-size: 20px;
+                    content: "Depois";
+                    color:green;
+                }
+                table tbody tr:nth-child(old){
+                    background-color: #ccc;
+                }
+        </style>
+    </head>
+    <body>
+        <div>
+            <p>Teste <em>123</em></p>
+            <em>Testando...</em>
+            <div class="testefilho">
+                <p> Teste <em>123</em></p>
+                <em>testando...</em>
+                <p>mais um paragrafo</p>
+                <p>mais um paragrafo</p>
+                <div class="pseudo">
+                    <p> Teste</p>
+                    <p>mais um paragrafo</p>
+                    <p>mais um paragrafo</p>
+                    <a href="pagina5.html">Link 1</a>
+                    <input>
+                </div>
+                <div class="elemento">
+                        Curso de java Proway Philips
+                        java
+                        c++
+                        delphi
+                        css
+                        html5
+                </div>
+                <div class="elemento2">
+                        Curso de java Proway Philips
+                        java
+                        c++
+                        delphi
+                        css
+                        html5
+                </div>
+            </div>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <td>Nome</td>
+                    <td>Email</td>
+                    <td>Telefone</td>
+
+
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr class ="impar">
+                    <td>Contato01</td>
+                    <td>contato01@hotmail.com</td>
+                    <td>4792633291</td>
+                </tr>
+                <tr class ="par">
+
+                    <td>Contato02</td>
+                    <td>Contato2@hotmail.com</td>
+                    <td>889641512</td>
+                </tr>
+                <tr class ="impar">
+                    <td>Contato03</td>
+                    <td>robinhotri@hotmail.com</td>
+                    <td>1399885545</td>
+
+                </tr>
+                <tr class ="par">
+                    <td>Contato04</td>
+                    <td>robinhotri@gmail.com</td>
+                    <td>1387447444</td>
+
+                </tr>
+
+            </tbody>
+        </table>
+
+    </body>
+</html>

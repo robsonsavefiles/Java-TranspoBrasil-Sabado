@@ -1,0 +1,181 @@
+<div class="row">
+    <div class="col-xs-12">
+        <div class="page-header">
+            <h2>{{titulo}}</h2>
+        </div>
+    </div>
+
+
+
+    <!-- Formulario de cadastro-->
+
+    <div class="col-xs-12" style="margin-top: 15px">
+        <form ng-submit="salvar(aluno)">
+
+            <h3>Dados Pessoais</h3>
+            <hr/>
+            <div class="row">
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group">
+                        <label>Nome</label>
+                        <input ng-model="aluno.nome"
+                               placeholder="Nome do Aluno"
+                               class="form-control">
+                    </div>
+                </div>
+
+
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input ng-model="aluno.email"
+                               placeholder="Email do Aluno"
+                               class="form-control" type="email">
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group">
+                        <label>Telefone</label>
+                        <input ng-model="aluno.telefone"
+                               placeholder="Tefefone do Aluno"
+                               class="form-control" type="tel">
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group">
+                        <label>CPF</label>
+                        <input ng-model="aluno.cpf"
+                               placeholder="CPF do Aluno"
+                               class="form-control">
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group">
+                        <label>Escolaridade</label>
+                        <select class="form-control" required ng-model="aluno.escolaridade">
+                            <option selected="selected" value="" disabled>Selecione uma opção:</option>
+                            <option value="fundamentalIncompleto">Ensino Fundamental Incompleto</option>
+                            <option value="fundamentalCompleto">Ensino Fundamental Completo</option>
+                            <option value="medioIncompleto">Ensino Médio Incompleto</option>
+                            <option value="medioCompleto">Ensino Médio Completo</option>
+                            <option value="superiorIncompleto">Ensino Superior Incompleto</option>
+                            <option value="superiorCompleto">Ensino Superior Completo</option>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <h3>Endereço</h3>
+                <hr/>
+
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group">
+                        <label>Rua</label>
+                        <input ng-model="aluno.endereco.rua"
+                               placeholder="Rua do Aluno"
+                               class="form-control">
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group">
+                        <label>Bairro</label>
+                        <input ng-model="aluno.endereco.bairro"
+                               placeholder="Bairro do Aluno"
+                               class="form-control">
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group">
+                        <label>Complemento</label>
+                        <input ng-model="aluno.endereco.complemento"
+                               placeholder="Complemento"
+                               class="form-control" type="text">
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group">
+                        <label>Número</label>
+                        <input ng-model="aluno.endereco.numero"
+                               placeholder="Número"
+                               class="form-control" type="number">
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group">
+                        <label>Cidade</label>
+                        <input ng-model="aluno.endereco.cidade"
+                               placeholder="Cidade do Aluno"
+                               class="form-control" type="text">
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group">
+                        <label>CEP</label>
+                        <input ng-model="aluno.endereco.cep"
+                               placeholder="CEP do Aluno"
+                               class="form-control" type="number">
+                    </div>
+                </div>
+                
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group">
+                        <label>Estado</label>
+                        <select required class="form-control" ng-model="aluno.endereco.estado">
+                            <option disabled selected value="">Selecione uma Opção:</option>
+                            <option value="acre">Acre</option>
+                            <option value="alagoas">Alagoas</option>
+                            <option value="amapa">Amapá</option>
+                            <option value="amazonas">Amazonas</option>
+                            <option value="bahia">Bahia</option>
+                            <option value="ceara">Ceará</option>
+                            <option value="distritoFederal">Distrito Federal</option>
+                            <option value="espiritoSanto">Espirito Santo</option>
+                            <option value="goias">Goiás</option>
+                            <option value="maranhao">Maranhão</option>
+                            <option value="matoGrossoDoSul">Mato Grosso do Sul</option>
+                            <option value="matoGrosso">Mato Grosso</option>
+                            <option value="minasGerais">Minas Gerais</option>
+                            <option value="para">Pará</option>
+                            <option value="paraiba">Paraíba</option>
+                            <option value="parana">Paraná</option>
+                            <option value="pernambuco">Pernambuco</option>
+                            <option value="piaui">Piauí</option>
+                            <option value="rioDeJaneiro">Rio de Janeiro</option>
+                            <option value="rioGrandeDoNorte">Rio Grande do Norte</option>
+                            <option value="rioGrandeDoSul">Rio Grande do Sul</option>
+                            <option value="rondonia">Rondônia</option>
+                            <option value="roraima">Roraima</option>
+                            <option value="santaCatarina">Santa Catarina</option>
+                            <option value="saoPaulo">São Paulo</option>
+                            <option value="sergipe">Sergipe</option>
+                            <option value="tocantins">Tocantins</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-xs-12" style="margin-top: 10px">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-3 pull-right">
+                            <button type="submit" class="btn btn-primary btn-block">Salvar</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </form>
+
+    </div>
+
+</div>
+

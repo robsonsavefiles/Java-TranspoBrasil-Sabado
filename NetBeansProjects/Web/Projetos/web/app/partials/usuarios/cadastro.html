@@ -1,0 +1,18 @@
+<div class="panel-body">
+    <form ng-submit="salvar(usuario)" class="row">
+        <text-input col-class="col-xs-12" label="Nome" input-name="nome" placeholder="Informe o nome do usuario" model="usuario.nome" type="text"></text-input>
+
+        <text-input col-class="col-xs-12" label="Login" input-name="login" placeholder="Informe o nome do usuario" model="usuario.login" type="text"></text-input>
+
+        <text-input col-class="col-xs-12" label="Senha" input-name="senha" placeholder="Informe o nome do usuario" model="usuario.senha" type="password"></text-input>
+
+        <div class="form-group col-xs-12">
+            <label>Permissões</label>
+            <select class="form-control" ng-options="permissao for permissao in permissoes" ng-model="usuario.permissoes" multiple></select>
+        </div>
+
+        <fieldset class="col-xs-12">
+            <button class="btn btn-block btn-success" type="submit">Salvar</button>
+        </fieldset>
+    </form>
+</div>

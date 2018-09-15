@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class table="component" name="br.com.invnautico.core.model.INComponent">
+    <id column="id" name="id">
+      <generator class="native"/>
+    </id>
+    <property name="nome" type="string" column="short_name"/>
+    <property name="descricao" type="string" column="full_description"/>
+    <many-to-one not-null="false" column="equipment_id" name="equipamento"/>
+    <property name="preco" type="double" column="price"/>
+    <property name="containerComponent" type="boolean" column="container_component"/>
+    <many-to-one not-null="false" column="category_id" name="categoria"/>
+    <many-to-one not-null="false" column="location_id" name="localizacao"/>
+    <many-to-one not-null="false" column="brand_id" name="marca"/>
+  </class>
+</hibernate-mapping>

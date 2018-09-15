@@ -1,0 +1,23 @@
+<div class="panel-body">
+    <input class="form-control" ng-model="search" placeholder="Pesquisar por...">
+
+    <table class="table table-bordered table-hover" style="margin-top: 15px">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="projeto in projetos| filter: search">
+                <td>{{projeto.nome}}</td>
+                <td class="text-center">
+                    <span class="glyphicon glyphicon-info-sign pointer" ng-click="irParaDetalhes(projeto)" style="margin-right: 5px"></span>
+                    <span class="glyphicon glyphicon-edit pointer" ng-click="irParaEditar(projeto)" style="margin-right: 5px"></span>
+                    <span class="glyphicon glyphicon-trash pointer" ng-click="remover(projeto)"></span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

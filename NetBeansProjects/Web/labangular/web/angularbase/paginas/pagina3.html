@@ -1,0 +1,12 @@
+<div ng-controller="listaEstadosController">
+    <h3>Hoje é {{dataAtual | date: 'medium': '-0200'}}</h3>
+    <h4>O valor hora de um desenvolvedor é {{valorHora | currency}}</h4>
+    <input ng-model="pesquisa">
+    <h3>Estados Brasileiros</h3>
+    <ul>
+        <li ng-repeat="estado  in  estados| filter:pesquisa | limitTo: 10 : atual track by $index">{{estado}}</li>
+    </ul>
+    
+    <button ng-disable="atual >= 0" ng-click="proximo()">Proximo</button>
+    <button ng-disable="atual <= 0" ng-click="anterior()">Anterior</button>
+</div>

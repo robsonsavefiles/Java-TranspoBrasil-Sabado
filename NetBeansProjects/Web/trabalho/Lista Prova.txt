@@ -1,0 +1,17 @@
+https://vitalets.github.io/angular-xeditable/
+
+
+Realizar o cadastramento de professores
+-Incluir professores
+-Atualizar professores
+-Remover Professor
+-Listar Professores(botao detalhes= mostra as certificações)
+-Incluir certificaçoes  para um professor
+
+
+
+Realizar o cadastramento de Alunos
+-Incluir Aluno
+-Atualizar Aluno
+-Remover Aluno
+-Listar Aluno

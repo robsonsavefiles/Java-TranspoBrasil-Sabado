@@ -1,0 +1,121 @@
+<div class="row">
+    <div class="col-xs-12">
+        <div class="page-header">
+
+            <h2>Nova Turma</h2>
+        </div>
+    </div>
+    <img src="app/img/nova_turma.jpg" class="pull-right"  height="100" width="100"/>
+    <!-- Formulario de cadastro-->
+
+    <div class="col-xs-12" style="margin-top: 15px">
+        <form ng-submit="salvar(turma)">
+            <form ng-submit="salvar(curso)">
+                <form ng-submit="salvar(professor)">
+                    <form ng-submit="salvar(aluno)">
+
+                        <div class="row">
+
+                            <div class="col-xs-12 col-md-12">
+                                <label>Curso</label>
+                                <div class="input-group">
+                                    <input type="text" 
+                                           class="form-control"
+                                           placeholder="Curso" 
+                                           ng-model="curso.nome"
+                                           ng-disabled="false">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button" data-toggle="modal" data-target="#pesquisaCurso">Cadastrar Curso</button>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-md-12">
+                                <label>Periodo</label>
+                                <div class="input-group">
+                                    <input type="text" 
+                                           class="form-control"
+                                           placeholder="Periodo" 
+                                           ng-model="turma.periodo"
+                                           ng-disabled="false">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button" data-toggle="modal" data-target="#pesquisaPeriodo">Cadastrar Periodo</button>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-12">
+                            <label>Professor</label>
+                            <div class="input-group">
+                                <input type="text" 
+                                       class="form-control"
+                                       placeholder="professor" 
+                                       ng-model="professor.nome"
+                                       ng-disabled="false">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button" data-toggle="modal" data-target="#pesquisaProfessor">Cadastrar Professor</button>
+                                </span>
+                            </div>
+                        </div>
+                         <div class="col-xs-12 col-md-12">   
+                        <label>Alunos</label>
+                        <div class="input-group">
+                            <input type="text" 
+                                   class="form-control"
+                                   placeholder="Alunos" 
+                                   ng-model="aluno.nome"
+                                   ng-disabled="true">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button" data-toggle="modal" data-target="#pesquisaAluno">Cadastrar Aluno</button>
+                            </span>
+                        </div>
+                         </div>
+                        <div class="col-xs-12 col-md-12"> 
+                        <label>Status</label>
+                        <div class="input-group">
+                            <input type="text" 
+                                   class="form-control"
+                                   placeholder="Status" 
+                                   ng-model="turma.status"
+                                   ng-disabled="false">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button" data-toggle="modal" data-target="#pesquisaStatus">Cadastrar Status</button>
+                            </span>
+                        </div>
+                        </div>
+
+                        <div class="col-xs-12" style="margin-top: 10px">
+                            <div class="row">
+                                <div class="col-xs-12 col-md-3 pull-right">
+                                    <button type="submit" class="btn btn-primary btn-block">Salvar</button>
+                                </div>
+                            </div>
+
+                        </div>
+                        </div>
+                        </div>
+
+
+                    </form>
+                </form>
+            </form>
+        </form>
+    </div>
+
+</div>
+
+
+<!-- Modal -->
+<div ng-controller="pesquisaProfessorController">
+    <div ng-include="'app/partials/professores/pesquisa-professor.html'"></div>
+</div>
+
+<div ng-controller="pesquisaCursoController">
+    <div ng-include="'app/partials/cursos/pesquisa-curso.html'"></div>
+</div>
+<div ng-controller="pesquisaTurmaController">
+    <div ng-include="'app/partials/turmas/pesquisa-turma.html'"></div>
+</div>
+
+<div ng-controller="pesquisaALunoController">
+    <div ng-include="'app/partials/alunos/pesquisa-aluno.html'"></div>
+</div>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html ng-app="projetos">
+    <head>
+        <title>Projetos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Boostrap CSS -->
+        <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet" />
+        <link href="app/css/bootstrap-custom.css" rel="stylesheet" type="text/css"/>
+
+        <link href="app/css/app.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body ng-controller="mainController">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand">Project</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" ng-if="usuario">
+                    <ul class="nav navbar-nav">
+                        <li><a ui-sref="usuarios.lista">Usuários</a></li>
+                        <li><a ui-sref="projetos.lista">Projetos</a></li>
+                        <li><a ui-sref="chamados.lista">Chamados</a></li>
+                        <li><a ui-sref="providencias.lista">Providências</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a>Bem vindo, <b>{{usuario.nome}}</b></a></li>
+                        <li><a class="pointer" ng-click="logout()">Sair</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+
+        <div class="container">
+            <div ng-controller="caixaMensagemController">
+                <div ng-repeat="mensagem in mensagens">
+                    <div class="row alert alert-dismissable text-center" ng-class="{'alert-info': mensagem.tipo === 'info', 'alert-danger': mensagem.tipo === 'danger', 'alert-success': mensagem.tipo === 'success', 'alert-warning': mensagem.tipo === 'warning'}">
+                        <button type="button" class="close" aria-label="Close" ng-click="fechar(mensagem.identificador)"><span aria-hidden="true">&times;</span></button>
+                        {{mensagem.texto}}
+                    </div>
+                </div>
+            </div>
+            <div ui-view></div>
+        </div>
+
+        <footer></footer>
+
+        <!-- JQuery -->
+        <script src="vendor/jquery/js/jquery.js"></script>
+
+        <!-- Angular JS -->
+        <script src="vendor/angular/angular.js"></script>
+        <script src="vendor/angular-ui-router/release/angular-ui-router.js"></script>
+        <script src="vendor/angular/angular-cookies.js"></script>
+
+        <!-- Angular JS Locale -->
+        <script src="vendor/angular/angular-locale_pt-br.js"></script>
+
+        <!-- Bootstrap -->
+        <script src="vendor/bootstrap/js/bootstrap.js"></script>
+
+        <!-- App -->
+        <script src="app/js/app.js"></script>
+        <script src="app/js/rota.js"></script>
+
+        <!-- App Services -->
+        <script src="app/js/services/autenticacaoService.js" type="text/javascript"></script>
+        <script src="app/js/services/usuariosService.js" type="text/javascript"></script>
+        <script src="app/js/services/projetosService.js" type="text/javascript"></script>
+        <script src="app/js/services/chamadosService.js" type="text/javascript"></script>
+        <script src="app/js/services/providenciasService.js" type="text/javascript"></script>
+
+        <!-- App Filters-->
+
+        <!-- App Controllers -->
+        <script src="app/js/controllers/mainController.js"></script>
+        <script src="app/js/controllers/caixaMensagemController.js"></script>
+        <script src="app/js/controllers/loginController.js" type="text/javascript"></script>
+        <script src="app/js/controllers/navegacaoController.js" type="text/javascript"></script>
+        
+        <script src="app/js/controllers/usuariosListaController.js" type="text/javascript"></script>
+        <script src="app/js/controllers/usuariosCadastroController.js" type="text/javascript"></script>
+        <script src="app/js/controllers/usuariosPesquisaController.js" type="text/javascript"></script>
+
+        <script src="app/js/controllers/projetosListaController.js" type="text/javascript"></script>
+        <script src="app/js/controllers/projetosCadastroController.js" type="text/javascript"></script>
+
+        <script src="app/js/controllers/chamadosListaController.js" type="text/javascript"></script>
+        <script src="app/js/controllers/chamadosCadastroController.js" type="text/javascript"></script>
+
+        <script src="app/js/controllers/providenciasListaController.js" type="text/javascript"></script>
+        <script src="app/js/controllers/providenciasCadastroController.js" type="text/javascript"></script>
+
+        <!-- App Directives -->
+        <script src="app/js/directives/textInputDirective.js" type="text/javascript"></script>
+        <script src="app/js/directives/textAreaInputDirective.js" type="text/javascript"></script>
+    </body>
+</html>

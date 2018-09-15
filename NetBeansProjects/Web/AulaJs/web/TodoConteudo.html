@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="vendor/jquery/jquery-2.1.4.min.js"></script>
+    </head>
+    <body>
+        <h1>Minhas Tarefas</h1>
+        <label>Tarefas</label><br/>
+        <input id="tarefa">
+        <button id="btnAdd">Adicionar</button>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Tarefas</th>
+                    <th>acão</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <tr>
+                    <td>Tarefas</td>
+                    <td>acão</td>
+                </tr>
+            </tbody>
+        </table>
+        <script>
+            //declaração de um modelo de dados
+            function Tarefa(id, nome) {
+                this.id = id;
+                this.nome = nome;
+            }
+
+            //declaração de um controlador para a tela 
+            function AFazerControle() {
+                var contador = 1;
+                var tarefas = [];
+                var self = this;
+
+                this.inicializar = function () {
+                    $('#btnAdd').on('click', self.adicionar);
+                };
+
+
+                this.adicionar = function () {
+                    var $el = $('#tarefa');
+                    var texto = $el.val();
+                    if (texto) {
+                        var tarefa = new Tarefa(contador++, texto);
+                        tarefas.push(tarefa);
+                        self.adicionarElemento(tarefa);
+                        $el.val('');
+                    }
+                };
+
+                this.adicionarElemento = function (tarefa) {
+                    var concluido = self.createComponent('<a>', 'ex' + tarefa.id, '#', 'concluido');
+                    var tdConcluido = self.createComponent('<td>');
+                    var tdNome = self.createComponent('<td>', null, null, tarefa.nome);
+                    var linha = self.createComponent('<tr>', 'linha' + tarefa.id);
+                    linha.appendTo('#tableBody');
+                    tdNome.appendTo(linha);
+                    tdConcluido.appendTo(linha);
+                    concluido.appendTo(tdConcluido);
+
+                    concluido.on('click', function () {
+                        linha.hide(1000, function () {
+                            concluido.off('click');
+                            linha.remove();
+                        });
+
+                    });
+
+
+                };
+
+
+                this.createComponent = function (component, id, href, text) {
+                    var atributos = {};
+                    if (id) {
+                        atributos.id = id;
+
+                    }
+                    if (href) {
+                        atributos.href = href;
+                    }
+                    if (text) {
+                        atributos.text = text;
+                    }
+                    return $(component, atributos);
+                };
+
+                this.inicializar();
+            }
+            new AFazerControle();
+        </script>
+    </body>
+</html>

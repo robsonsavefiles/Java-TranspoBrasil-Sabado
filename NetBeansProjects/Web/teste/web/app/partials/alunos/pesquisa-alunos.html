@@ -1,0 +1,34 @@
+
+<!-- Modal -->
+<div class="modal fade" id="pesquisaAlunos" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Buscar Certificações</h4>
+      </div>
+      <div class="modal-body">
+          <table class="table table-bordered table-striped" ng-model="alunoss">
+              <thead>
+                  <tr>
+                      <th></th>
+                      <th>Nome</th>
+                      <th>CPF</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr ng-repeat="aluno in alunos">
+                      <td><input type="checkbox" value="certificacao"  ng-click="selecionar(aluno)"></td>
+                      <td>{{aluno.nome}}</td>
+                      <td>{{aluno.cpf}}</td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" data-dismiss="modal">Fechar</button>
+        
+      </div>
+    </div>
+  </div>
+</div>

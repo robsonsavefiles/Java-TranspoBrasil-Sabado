@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="angular-base">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="vendor/angular/angular.js"></script>
+        <script src="vendor/angular-ui-router/release/angular-ui-router.js"></script>
+    </head>
+    <body>
+        
+        
+        <ul>
+            <li><a ui-sref="pagina1">Pagina1</a></li>
+            <li><a ui-sref="pagina2">Pagina2</a></li>
+            <li><a ui-sref="pagina3">Pagina3</a></li>
+            <li><a ui-sref="pagina4">Pagina4</a></li>
+            <li><a ui-sref="pagina5">Pagina5</a></li>
+        </ul>
+        
+        <div ui-view="">
+<!--            Content da aplicação-->
+        </div>
+
+        <!--        inclusão arquivo com módulo principal-->
+        <script src="angularbase/app.js"></script>
+
+        <!--        Inclusao dos controladores-->
+        <script src="angularbase/controler/principalcontroler.js"></script>
+        <script src="angularbase/controler/listaEstadosControler.js"></script>
+        <script src="vendor/angular/angular-locale_pt-br.js"></script>
+    </body>
+</html>

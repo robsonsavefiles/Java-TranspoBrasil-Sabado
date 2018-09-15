@@ -1,0 +1,68 @@
+<div class="row">
+    <div class="col-xs-12">
+         <div class="page-header">
+            
+            <h2>{{titulo}}</h2>
+        </div>
+    </div>
+  <img src="app/img/new_curso.png" class="pull-right"  height="100" width="100"/>
+    <!-- Formulario de cadastro-->
+    
+    <div class="col-xs-12" style="margin-top: 15px">
+        <form ng-submit="salvar(curso)">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        
+                        <label>Nome</label>
+                        <input ng-model="curso.nome"
+                               placeholder="nome do curso"
+                               class="form-control">
+                    </div>
+                </div>
+                
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label>Descrição</label>
+                        <textarea ng-model="curso.descricao"
+                               placeholder="nome do curso"
+                               class="form-control"></textarea>
+                    </div>
+                </div>
+                
+                
+                <div class="col-xs-12">
+                    <label>Coordenador</label>
+                    <div class="input-group">
+                        <input type="text" 
+                               class="form-control"
+                               placeholder="Coordenador" 
+                               ng-model="curso.coordenador.nome"
+                               ng-disabled="true">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button" data-toggle="modal" data-target="#pesquisaProfessor">...</button>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="col-xs-12" style="margin-top: 10px">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-3 pull-right">
+                            <button type="submit" class="btn btn-primary btn-block">Salvar</button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+        </form>
+    </div>
+    
+</div>
+
+
+<!-- Modal -->
+<div ng-controller="pesquisaProfessorController">
+<div ng-include="'app/partials/professores/pesquisa-professor.html'"></div>
+</div>

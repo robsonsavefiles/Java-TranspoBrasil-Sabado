@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>AlphaImport</title>
+<link rel="stylesheet"  href="../planillas/estilo2.css"/>
+</head>
+<body>
+<center>
+<div id="contenedor">
+
+    <div id="cabecera">
+    	<div id="logo"></div>    	
+        <div id="cliente"><a href="../index.jsp">Cerrar Sesion</a></div>
+    </div>
+    <div id="banner"></div>
+    <div id="menu">
+   	  <table>
+        	<tr>
+            	<td><a href="../intranet/index.jsp">Inicio</a>
+                <td><a href="../intranet/productos.jsp">Productos</a>
+                <td><a href="../intranet/proveedores.jsp">Proveedores</a>
+                <td><a href="../intranet/clientes.jsp">Clientes</a>
+                <td><a href="../intranet/contactos.jsp">Contactos</a>
+                <td><a href="../intranet/usuarios.jsp">Usuarios</a>
+                <td><a href="../intranet/pedidos.jsp">Pedidos</a>
+           		<td>&nbsp;
+            </tr>
+        </table>
+    </div>
+    <div id="contenido">
+    	<table width="960" border="0">
+          <tr>
+            <td><!-- TemplateBeginEditable name="EditRegion1" -->
+              <table width="100%" border="0">
+                <tr>
+                  <td>&nbsp;</td>
+                </tr>
+              </table>
+          <!-- TemplateEndEditable --></tr>
+        </table>
+    </div>
+    <div id="separador"></div>
+    <div id="pie"></div>
+</div>
+</center>
+</body>
+</html>

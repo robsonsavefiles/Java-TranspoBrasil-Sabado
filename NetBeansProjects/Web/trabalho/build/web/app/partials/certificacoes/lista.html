@@ -1,0 +1,51 @@
+<div class="row">
+    
+    <div class="col-xs-12">
+         <div class="page-header">
+            
+            <h2>Lista de Certificaçoes</h2>
+            
+        </div>
+        <img src="app/img/certi.png" class="pull-right" height="100" width="100"/>
+    </div>
+    <!-- Barra de Pesquisa-->
+        <div class="col-xs-12">
+        <div class="row">
+            <div class="col-xs-12 col-sm-8">
+                <input class="form-control" 
+                       ng-model="search"
+                       placeholder="pesquisar por">
+            </div>
+        </div>
+        
+    </div>
+    
+    
+    <!-- Tabela com os dados-->
+    
+    <div class="col-xs-12" style="margin-top: 15px">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Orgao Expeditor</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="certificacao in certificacoes |filter:search">
+                    <td>{{certificacao.nome}}</td>
+                    <td>{{certificacao.orgao_expeditor}}</td>
+                    <td><span class="glyphicon glyphicon-edit"
+                              ng-click="editar(certificacao)"
+                              style="margin-right: 5px"></span>
+                        <span class="glyphicon glyphicon-trash"
+                              ng-click="remover(certificacao)"></span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+    
+</div>

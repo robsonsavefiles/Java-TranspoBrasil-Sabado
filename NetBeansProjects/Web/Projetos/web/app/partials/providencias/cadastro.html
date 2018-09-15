@@ -1,0 +1,41 @@
+<div class="panel-body">
+    <form ng-submit="salvar(providencia)" class="row">
+
+        <div class="form-group col-xs-12">
+            <label>Projeto</label>
+            <select class="form-control" ng-options="projeto.nome for projeto in projetos track by projeto.id" ng-model="projeto" ng-change="atualizarChamados()" ng-disabled="edicao"></select>
+        </div>
+
+        <div class="form-group col-xs-12">
+            <label>Chamado</label>
+            <select class="form-control" ng-options="chamado.titulo for chamado in chamados track by chamado.id" ng-model="chamado" ng-disabled="edicao"></select>
+        </div>
+
+        <div class="form-group col-xs-12">
+            <label>Estágio</label>
+            <select class="form-control" ng-options="estagio for estagio in estagios" ng-model="providencia.estagio"></select>
+        </div>
+
+        <div class="form-group col-xs-12">
+            <label>Autor</label>
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Autor da providência" ng-model="providencia.autor.nome" ng-disabled="true">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" data-toggle="modal" data-target="#pesquisaUsuario" ng-disabled="edicao">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                </span>
+            </div>
+        </div>
+
+        <text-area-input col-class="col-xs-12" label="Descrição" input-name="descricao" placeholder="Informe a descrição da providência" model="providencia.descricao"></text-area-input>
+
+        <fieldset class="col-xs-12">
+            <button class="btn btn-block btn-success" type="submit">Salvar</button>
+        </fieldset>
+    </form>
+
+    <div ng-controller="usuariosPesquisaController">
+        <div ng-include="'app/partials/usuarios/modalPesquisa.html'"></div>
+    </div>
+</div>

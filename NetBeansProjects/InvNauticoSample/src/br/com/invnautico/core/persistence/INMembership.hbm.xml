@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class table="membership" name="br.com.invnautico.core.model.INMembership">
+    <id column="id" name="id">
+      <generator class="native"/>
+    </id>
+    <property name="nome" type="string" column="name"/>
+    <property name="ativo" type="boolean" column="active"/>
+    <property name="site" type="string" column="site"/>
+    <property name="dados" type="string" column="member_data"/>
+    <list inverse="true" cascade="all" name="equipamentos">
+      <key column="member_id"/>
+      <index column="index_membership"/>
+      <one-to-many class="br.com.invnautico.core.model.INEquipment"/>
+    </list>    
+  </class>
+</hibernate-mapping>

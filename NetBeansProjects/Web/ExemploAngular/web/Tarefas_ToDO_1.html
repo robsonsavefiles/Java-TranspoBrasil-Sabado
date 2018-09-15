@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="projeto-ola">
+    <head>
+        <title>Ola Angular</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="vendor/angularjs/angular.js"></script>
+        <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap-theme.css">
+        <style>
+          
+            td a{
+                cursor: pointer;
+                color: #00897b
+            }
+            ul{
+                list-style: none;
+            }
+            .concluida{
+                color :white;
+                background-color: green;
+                text-decoration: line-through;
+            }
+        </style>
+    </head>
+    <body ng-controller="principalController">
+   
+
+        <label>Nome</label><br/>
+        <input ng-model="atual.nome"><br><br/>
+        <label>SobreNome</label><br/>
+        <input ng-model="sobrenome">
+        <p>Nome Completo é{{nomecompleto}}</p>
+       
+       
+        <script src="vendor/bootstrap/js/bootstrap.js" type="text/java"></script>
+        <script>
+                    //cria o modulo projeto-ola
+                    angular.module('projeto-ola', []);
+
+                    angular.module('projeto-ola')
+                            .controller('principalController', ['$scope', function ($scope) {
+                                  
+                                    $scope.$watch('nome',function(nome){
+                                          console.log('nome');
+                                        $scope.nomecompleto =(nome || ' ')+ ' '+($scope.sobrenome || '');
+                                    });
+                                   $scope.$watch('sobrenome',function(sobrenome){
+                                       console.log('sobrenome');
+                                        $scope.nomecompleto =($scope.nome || ' ')+' '+(sobrenome || '');
+                                    });
+                                   
+                                }]);
+        </script>
+        
+        <script src="vendor/jquery/jquery-2.1.4.min.js" type="text/javascript"></script>
+        <script src="vendor/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+
+    </body>
+</html>

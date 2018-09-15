@@ -1,0 +1,127 @@
+<div class="row">
+    <div class="col-xs-12">
+        <div class="page-header">
+            <h2>{{titulo}}</h2>
+        </div>
+    </div>
+
+
+
+    <!-- Formulario de Cadastro-->
+
+    <div class="col-xs-12" style="margin-top: 15px">
+        <form ng-submit="salvar(turma)">
+            <div class="row">
+                <div class="col-xs-12 col-md-8">
+                    <div class="form-group">
+                        <label>Período</label>
+                        <select class="form-control" required ng-model="turma.periodo">
+                            <option selected value="" disabled>Selecione uma opção:</option>
+                            <option value="matutino">Matutino</option>
+                            <option value="vespertino">Vespertino</option>
+                            <option value="noturno">Noturno</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-8">
+                    <div class="form-group">
+                        <label>Status</label>
+                        <select class="form-control" required ng-model="turma.status">
+                            <option selected value="" disabled>Selecione uma opção:</option>
+                            <option value="aberto">Aberto</option>
+                            <option value="fechado">Fechado</option>
+                            <option value="andamento">Em Andamento</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Modal -->
+                <div ng-controller="pesquisaProfessorController">
+                    <div ng-include="'app/partials/professores/pesquisa-professor.html'"></div>
+                </div>
+
+                <div class="col-xs-12 col-md-8">
+                    <label>Professor</label>
+                    <div class="input-group">
+                        <input type="text" 
+                               class="form-control"
+                               placeholder="Professor" 
+                               ng-model="turma.professor.nome"
+                               ng-disabled="true">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button" data-toggle="modal" data-target="#pesquisaProfessor">...</button>
+                        </span>
+                    </div>
+                </div>
+
+
+                <!-- Modal -->
+                <div ng-controller="pesquisaCursoController">
+                    <div ng-include="'app/partials/cursos/pesquisa-curso.html'"></div>
+                </div>
+                <div class="col-xs-12 col-md-8">
+                    <label>Curso</label>
+                    <div class="input-group">
+                        <input type="text" 
+                               class="form-control"
+                               placeholder="Curso" 
+                               ng-model="turma.curso.nome"
+                               ng-disabled="true">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button" data-toggle="modal" data-target="#pesquisaCurso">...</button>
+                        </span>
+                    </div>
+                </div>
+
+
+
+
+                <!-- Modal -->
+                <div ng-controller="pesquisaAlunosController">
+                    <div ng-include="'app/partials/alunos/pesquisa-alunos.html'"></div>
+                </div>
+
+                <div class="col-xs-12">
+                    <label>Alunos</label>
+                    <div class="input-group">
+                        <button class="btn btn-default" type="button" data-toggle="modal" data-target="#pesquisaAlunos">Adicionar Alunos</button>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Email</th>
+                                <th>CPF</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="aluno in turma.alunos">
+                                <td ng-model="aluno.nome">{{aluno.nome}}</td>
+                                <td ng-model="aluno.email">{{aluno.email}}</td>
+                                <td ng-model="aluno.cpf">{{aluno.cpf}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+
+
+                <div class="col-xs-12 col-md-8" style="margin-top: 10px">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-3 pull-right">
+                            <button type="submit" class="btn btn-primary btn-block">Salvar</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </form>
+    </div>
+
+</div>

@@ -1,0 +1,12 @@
+1)Escreva um programa que leia o endereço de um usuario, deve ser solicitado rua, 
+numero, complemento, bairro, cidade, estado e cep, em seguida o programa deve apresentar 
+todos os dados lidos em um linha 
+
+2)Escreva um programa que leia os dados de um motorista, o sistema deve pedir o nome do 
+motorista, o numero da carteira e a categoria, em seguida
+deve apresentar os dados em uma linha.
+
+3)Escreva um programa que solicite 5 valores inteiros, em seguida imprima a soma de todos
+os valores, a multiplicaçao de todos os valores, o primeiro valor multiplicado por 5, o
+segundo valor multiplicado por 3, o terceiro valor multiplicado por 9, o quarto valor
+multiplicado por 7 e o quinto valor multiplicado por 11

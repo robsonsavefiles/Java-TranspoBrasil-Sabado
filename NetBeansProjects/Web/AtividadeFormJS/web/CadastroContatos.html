@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="vendor/jquery/jquery-2.1.4.min.js"></script>
+        <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap-theme.css">
+    </head>
+    <body>
+        <div class="container">
+            <header  class="page-header row">
+                <h1>Meus Contatos</h1>
+            </header>
+            <div class="row">
+              
+                 
+                        <div class="col-xs-12 form-group col-md-12">
+
+                            <label for="nome">Nome</label>
+                            <input type="text" id="nome" class="form-control" placeholder="Digite o seu Nome">
+
+                        </div>
+
+                        <div class="col-xs-12 form-group col-md-12">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control" placeholder="Digite o seu Email">
+                        </div>
+
+                        <div class="col-xs-12 form-group col-md-12">
+                            <label for="email">Telefone</label>
+                            <input type="text" id="telefone" class="form-control" placeholder="Digite o seu Telefone">
+                        </div>
+
+
+                        <div class="col-xs-12 col-md-2 pull-right ">
+                            
+                            <button id="btnAdd" class="btn btn-success btn-block ">Salvar</button>
+                            
+                        </div>
+                
+            </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                       
+                            <th>Nome</th>
+                            <th>Email</th>
+                            <th>Telefone</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody"></tbody>
+                </table>
+        </div>
+        
+           <script src="vendor/bootstrap/js/bootstrap.js" type="text/java"></script>
+
+            <script>
+                //declaração de um modelo de dados
+                function Contato(id, nome, email, telefone) {
+                    this.id = id;
+                    this.nome = nome;
+                    this.email = email;
+                    this.telefone = telefone;
+                }
+
+                //declaração de um controlador para a tela 
+                function AFazerControle() {
+                    var contador = 1;
+                    var contatos = [];
+                    var self = this;
+
+                    this.inicializar = function () {
+                        $('#btnAdd').on('click', self.adicionar);
+                    };
+
+
+                    this.adicionar = function () {
+                        var $nome = $('#nome');
+                        var $email = $('#email');
+                        var $telefone = $('#telefone');
+                        var tNome = $nome.val();
+                        var tEmail = $email.val();
+                        var tTelefone = $telefone.val();
+                        
+                        if (tNome) {
+                            var contato = new Contato(contador++, tNome,tEmail,tTelefone);
+                            contatos.push(contato);
+                            self.adicionarElemento(contato);
+                            $nome.val('');
+                            $email.val('');
+                            $telefone.val('');
+                        }
+                    };
+
+                    this.adicionarElemento = function (contato) {
+                        var concluido = self.createComponent('<a>', 'ex' + contato.id, '#', 'Remover');
+                        var tdConcluido = self.createComponent('<td>');
+                        var tdNome = self.createComponent('<td>', null, null,contato.nome);
+                        var tdEmail = self.createComponent('<td>', null, null, contato.email);
+                        var tdTelefone = self.createComponent('<td>', null, null,contato.telefone);
+                        var linha = self.createComponent('<tr>', 'linha' + contato.id);
+                        linha.appendTo('#tableBody');
+                        tdNome.appendTo(linha);
+                        tdEmail.appendTo(linha);
+                        tdTelefone.appendTo(linha);
+                        tdConcluido.appendTo(linha);
+                        concluido.appendTo(tdConcluido);
+
+                        concluido.on('click', function () {
+                            linha.hide(1000, function () {
+                                concluido.off('click');
+                                linha.remove();
+                            });
+
+                        });
+
+
+                    };
+
+                    this.createComponent = function (component,id,href,text) {
+                        var atributos = {};
+                        
+                         if (id) {
+                            atributos.id = id;
+                        }
+                        
+                        if (href) {
+                            atributos.href = href;
+                        }
+                        if (text) {
+                            atributos.text = text;
+                        }
+                        return $(component, atributos);
+                    };
+
+                    this.inicializar();
+                }
+                new AFazerControle();
+            </script>
+            <script src="vendor/jquery/jquery-2.1.4.min.js" type="text/javascript"></script>
+            <script src="vendor/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+    </body>
+</html>

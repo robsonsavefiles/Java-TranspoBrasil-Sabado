@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!--
+Exemplo Jquery
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="vendor/jquery/jquery-2.1.4.min.js"></script>
+        <style>
+
+            .verde{
+                color:green;
+            }
+
+        </style>
+        <script>
+            $(document).ready(function () {
+                //aqui é seguro manipular o DOM
+                alert("so aparece depois de carregar a pagina");
+                $('h1').html('Troquei o texto de todos os titulos');
+                $(".verde").html('HULK');
+                $("#teste").html('Texto adicionado com Jquery:)!');
+
+                $('.verde').hide(2000);
+                $(".verde").show(3000);
+
+                $('.verde').fadeOut(3000, function () {
+                    $('#caixamensagem').html('Hulk escondido');
+
+                });
+
+                $('.verde').fadeIn(3000, function () {
+                    $('#caixamensagem').html('Hulk na Area');
+
+                });
+
+                $('#btnAdd').on('click', function (event) {
+                    //pegar o texto que esta no input
+                   var tarefa = $('#tarefa').val();
+                   //adicionar o texto na lista de tarefas
+                   if(tarefa){
+                   $('#lista').append('<li>'+tarefa+'</li>');
+                    }
+                });
+               
+
+
+            });
+        </script>
+    </head>
+    <body>
+        <div id ="caixamensagem">
+
+        </div>
+        <h1 id="teste">1234567890</h1>
+        <h1 class="verde">Teste1</h1>
+
+        <label>Tarefa</label>
+        <input id="tarefa"/>
+        <button id="btnAdd"> Adicionar</button>
+        <div id="caixa">
+            <ul id ="lista">
+
+            </ul>
+        </div>
+
+        <h1>Teste</h1>
+        <h1>Teste</h1>
+        <h1>Teste</h1>
+        <h1>Teste</h1>
+        <h1>Teste</h1>
+        <h1>Teste</h1>
+        <h1>Teste</h1>
+        <h1>Teste</h1>
+        <h1>Teste</h1>
+        <h1>Teste</h1>
+        <h1>Teste</h1>
+        <h1>Teste</h1>
+        <h1>Teste</h1>
+        <h1>Teste</h1>
+        <h1>Teste</h1>
+        <h1>Teste</h1>
+        <h1>Teste</h1>
+        <h1>Teste</h1>
+        <h1>Teste</h1>
+        <h1>Teste</h1>
+        <h1>Teste</h1>
+        <h1>Teste</h1>
+        <h1>Teste</h1>
+        <h1>Teste</h1>
+        <h1>Teste</h1>
+        <h1>Teste</h1>
+        <h1>Teste</h1>
+        <h1>Teste</h1>
+        <h1>Teste</h1>
+        <h1>Teste</h1>
+        <h1>Teste</h1>
+        <h1>Teste</h1>
+        <h1>Teste</h1>
+        <h1>Teste</h1>
+    </body>
+</html>

@@ -1,0 +1,9 @@
+<div>
+    <div class="{{mobile}} {{personalComputer}}">
+        <label>{{label}}</label>
+        <select class="form-control" required ng-model="model">
+            <option selected="selected" value="" disabled>Selecione uma opção:</option>
+            <option ng-repeat="option in getOptions() track by $index " value="{{option.value}}">{{option.description}}</option>
+        </select>
+    </div>
+</div>

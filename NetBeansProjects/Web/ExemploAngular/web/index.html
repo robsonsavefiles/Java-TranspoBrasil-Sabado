@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="projeto-ola">
+    <head>
+        <title>Ola Angular</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="vendor/angularjs/angular.js"></script>
+        <style>
+            input,button,label{
+                display: block;
+            }
+        </style>
+    </head>
+    <body ng-controller="principalController">
+        <h1>Meus contatos</h1>
+        <input type="hidden" ng-model="atual.id">
+
+        <label>Nome</label>
+        <input ng-model="atual.nome">
+        <label>Email</label>
+        <input ng-model="atual.email">
+        <label>Telefone</label>
+        <input ng-model="atual.telefone">
+        <button type="button" ng-click="salvar(atual)">Salvar</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Telefone</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="contato in contatos">
+                    <td>{{contato.nome}}</td>
+                    <td>{{contato.email}}</td>
+                    <td>{{contato.telefone}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <script>
+        //cria o modulo projeto-ola
+        angular.module('projeto-ola',[]);
+
+        angular.module('projeto-ola')
+        .controller('principalController',['$scope',function($scope){
+        $scope.contatos =[];  
+        $scope.atual={};
+
+        $scope.salvar = function(contato){
+        contato.id =contato.id || $scope.contatos.length+1;
+        $scope.contatos.push(contato);
+        $scope.atual={};
+        } ;
+
+
+        }]);
+    
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            var frutas=['Abacaxi','Laranja','Uva','Limão'];
+            console.log(frutas.length);
+            
+            for(var index=0; index< frutas.length;index++){
+                console.log(frutas[index]);
+            }
+            console.log('===================================');
+            //adicionando um elemento no final do array
+            frutas.push('Banana');
+            
+             for(var index=0; index< frutas.length;index++){
+                console.log(frutas[index]);
+            }
+             console.log('===================================');
+            
+            frutas.pop();
+            
+            for(var index=0; index< frutas.length;index++){
+                console.log(frutas[index]);
+            }
+             console.log('===================================');
+            //adicionando um elemento no inicio do array
+            frutas.unshift('Banana');
+            
+            for(var index=0; index< frutas.length;index++){
+                console.log(frutas[index]);
+            }
+             console.log('===================================');
+            //remove um elemento do inicio do array
+             result = frutas.shift();
+            
+            for(var index=0; index< frutas.length;index++){
+                console.log(frutas[index]);
+            }
+             console.log('===================================');
+             
+             for(var index=0; index< frutas.length;index++){
+                console.log(index +'--->'+frutas[index]);
+            }
+            console.log('===================================');  
+            var indice = frutas.indexOf('maracuja');
+            console.log('maracuja esta no posicao' +indice);
+            indice = frutas.indexOf('Banana');
+            console.log('Banana esta na posição'+indice);
+            
+            
+            var posicao =0;
+            var quantidade=1;
+            frutas.slice(posicao,quantidade);
+            
+             for(var index=0; index< frutas.length;index++){
+                console.log(index +'--->'+frutas[index]);
+            }
+            console.log('===================================');
+            //copia de array
+            frutas.push('maracuja','melancia','uva');
+            var inicio = 0;
+            var total=5;
+            var frutas2= frutas.slice(inicio,total);
+            
+            for(var index=0; index< frutas.length;index++){
+                console.log(index +'--->'+frutas2[index]);
+            }
+            console.log('===================================');
+              for(var index=0; index< frutas2.length;index++){
+                console.log(index +'--->'+frutas2[index]);
+            }
+            console.log('===================================');
+        </script>
+    </body>
+</html>

@@ -1,0 +1,39 @@
+Projeto 
+id
+nome
+descricao
+===================================================================
+
+Chamado
+id
+titulo
+descricao
+status
+providencias
+===================================================================
+
+Providencia
+id
+descricao
+estagio
+autor
+==================================================================
+
+
+Status
+Aberto
+Fechado
+
+==================================================================
+
+
+Estagio
+Analise, Desenvolvimento, Teste,Entregue,Rejeitado;
+
+==================================================================
+OBS1: 
+A listagem e cadastramento de chamados deve ser filtrada por projetos. ou  se seja para listar ou incluir chamados deve ser necessario primeiramente selecionar um projeto.
+
+OBS2:
+a listagem e cadastramento de providencias deve ser filtrada por projetos e chamados,ou seja para listar ou incluir nova providencia deve ser necessario primeiramente 
+selecionaro projeto e um chamado.
